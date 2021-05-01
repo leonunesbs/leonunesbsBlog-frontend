@@ -1,14 +1,20 @@
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { Seo, Layout, Image, Heading } from "../../components";
 import { getStrapiMedia, fetchAPI } from "../../../lib";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 const Article = ({ article, categories }) => {
   const router = useRouter();
   const color = useColorModeValue("gray.700", "gray.100");
+
+  if (router.isFallback) {
+    return <p>Carregando...</p>;
+  }
+
   const imageUrl = getStrapiMedia(article.image);
   const seo = {
     metaTitle: article.title,
@@ -16,10 +22,6 @@ const Article = ({ article, categories }) => {
     shareImage: article.image,
     article: true,
   };
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <Layout categories={categories}>
@@ -61,7 +63,7 @@ const Article = ({ article, categories }) => {
             <Text>By {article.author?.name}</Text>
             <Text fontWeight="thin" fontSize="sm">
               <Moment format="D MMM YYYY" locale="pt-br">
-                {article.published_at}
+                {article.publishedAt}
               </Moment>
             </Text>
           </Flex>
@@ -73,7 +75,6 @@ const Article = ({ article, categories }) => {
 
 export async function getStaticPaths() {
   const articles = await fetchAPI("/articles");
-
   return {
     paths: articles.map((article) => ({
       params: {

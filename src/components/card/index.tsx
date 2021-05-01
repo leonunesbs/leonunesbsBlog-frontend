@@ -33,8 +33,8 @@ const Card = ({ article, ...rest }) => {
               </Text>
               <Flex justify="flex-end">
                 <Text fontWeight="light" fontSize="sm" color={color}>
-                  <Moment format="DD/MM/YYYY" locale="pt-br">
-                    {article.published_at}
+                  <Moment format="D MMM YYYY" locale="pt-br">
+                    {article.publishedAt}
                   </Moment>
                 </Text>
               </Flex>
