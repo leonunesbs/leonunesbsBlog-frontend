@@ -1,6 +1,5 @@
 // 1. Import the extendTheme function
-import { extendTheme, ThemeOverride } from "@chakra-ui/react"
-
+import { extendTheme, ThemeOverride } from "@chakra-ui/react";
 
 const theme: ThemeOverride = {
   colors: {
@@ -10,27 +9,23 @@ const theme: ThemeOverride = {
       700: "#2a69ac",
     },
   },
-  config: {
-
-  },
+  config: {},
   fonts: {
-    heading: 'Staatliches'
-  }
-  ,
+    heading: "Staatliches",
+  },
   styles: {
     global: {
       body: {},
       a: {
-        textDecoration: 'none'
+        textDecoration: "none",
+        textDecorationColor: "red.500",
       },
       h1: {
-        fontFamily: 'Staatliches',
-        fontSize: '80px'
-      }
-    }
-  }
-}
+        fontFamily: "Staatliches",
+        fontSize: "80px",
+      },
+    },
+  },
+};
 
-
-export default extendTheme(theme)
-
+export default extendTheme(theme);
