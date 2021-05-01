@@ -15,7 +15,7 @@ const Category = ({ category, categories }) => {
     <Layout categories={categories}>
       <Seo seo={seo} />
       <section>
-        <Flex flexDir="column" mt={14} px={[4, 20]}>
+        <Flex flexDir="column" mt={14} px={[2, 20]}>
           <Heading as="h1" size="4xl" text={category.name} />
           <Articles articles={category.articles} />
         </Flex>
