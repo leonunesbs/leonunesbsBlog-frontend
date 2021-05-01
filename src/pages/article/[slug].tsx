@@ -4,8 +4,10 @@ import { Seo, Layout, Image, Heading } from "../../components";
 import { getStrapiMedia, fetchAPI } from "../../../lib";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
+import { useRouter } from "next/dist/client/router";
 
 const Article = ({ article, categories }) => {
+  const router = useRouter();
   const color = useColorModeValue("gray.700", "gray.100");
   const imageUrl = getStrapiMedia(article.image);
   const seo = {
@@ -14,6 +16,10 @@ const Article = ({ article, categories }) => {
     shareImage: article.image,
     article: true,
   };
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Layout categories={categories}>
@@ -74,7 +80,7 @@ export async function getStaticPaths() {
         slug: article.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
