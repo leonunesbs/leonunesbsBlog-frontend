@@ -13,16 +13,17 @@ const Card = ({ article, ...rest }) => {
       >
         <Flex flexDir="column" _hover={{ bgColor: "gray.100" }}>
           <Image image={article.image} objectFit="cover" />
-          <Flex py={6}>
+          <Flex p={8}>
             <Flex as={BsArrowReturnRight} w={6} h={4} mx={1} />
             <Flex flexDir="column">
               <Heading
                 fontWeight="bold"
                 as="h4"
                 text={article.category.name}
-                fontSize="md"
+                fontSize="lg"
+                mb={4}
               />
-              <Text fontSize="lg" lineHeight={1.4} letterSpacing={1.4}>
+              <Text fontSize="xl" lineHeight={1.4} letterSpacing={1.4}>
                 {article.title}
               </Text>
             </Flex>
