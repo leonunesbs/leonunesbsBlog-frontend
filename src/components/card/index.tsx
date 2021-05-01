@@ -3,6 +3,7 @@ import { BsArrowReturnRight } from "react-icons/bs";
 import React from "react";
 import { Heading } from "..";
 import Image from "../image";
+import Moment from "react-moment";
 
 const Card = ({ article, ...rest }) => {
   const color = useColorModeValue("gray.700", "gray.100");
@@ -19,7 +20,7 @@ const Card = ({ article, ...rest }) => {
           <Image image={article.image} objectFit="cover" />
           <Flex p={[4, 10]}>
             <Icon as={BsArrowReturnRight} w={6} h={4} mx={1} />
-            <Flex flexDir="column">
+            <Flex flexDir="column" flexGrow={1}>
               <Heading
                 fontWeight="bold"
                 as="h4"
@@ -30,6 +31,13 @@ const Card = ({ article, ...rest }) => {
               <Text fontSize="xl" lineHeight={1.4} letterSpacing={0.5}>
                 {article.title}
               </Text>
+              <Flex justify="flex-end">
+                <Text fontWeight="light" fontSize="sm" color={color}>
+                  <Moment format="DD/MM/YYYY" locale="pt-br">
+                    {article.published_at}
+                  </Moment>
+                </Text>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>

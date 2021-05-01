@@ -9,8 +9,8 @@ const theme: ThemeOverride = {
     },
   },
   config: {
-    initialColorMode: "dark",
-    useSystemColorMode: false,
+    initialColorMode: "light",
+    useSystemColorMode: true,
   },
   fonts: {
     heading: "Staatliches",
