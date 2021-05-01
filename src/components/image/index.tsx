@@ -3,7 +3,6 @@ import { Image as ChakraImage } from "@chakra-ui/react";
 
 const Image = ({ image, ...rest }) => {
   const imageUrl = getStrapiMedia(image);
-
   return (
     <ChakraImage
       src={imageUrl}

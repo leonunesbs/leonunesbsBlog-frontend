@@ -6,7 +6,6 @@ import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 
 const Article = ({ article, categories }) => {
   const imageUrl = getStrapiMedia(article.image);
-  console.log(article);
   const seo = {
     metaTitle: article.title,
     metaDescription: article.description,
