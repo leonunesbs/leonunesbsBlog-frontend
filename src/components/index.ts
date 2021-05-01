@@ -6,4 +6,4 @@ import Layout from "./layout";
 import Nav from "./nav";
 import Seo from "./seo";
 
-export {Articles, Card, Heading, Image, Layout, Nav, Seo}
+export { Articles, Card, Heading, Image, Layout, Nav, Seo };
