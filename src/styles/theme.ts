@@ -10,7 +10,7 @@ const theme: ThemeOverride = {
   },
   config: {
     initialColorMode: "light",
-    useSystemColorMode: true,
+    useSystemColorMode: false,
   },
   fonts: {
     heading: "Staatliches",
