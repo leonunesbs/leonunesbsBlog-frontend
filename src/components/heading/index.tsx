@@ -1,5 +1,4 @@
 import { Heading as ChakraHeading } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { HeadingProps } from "./Heading";
 
 function Heading({ text, ...rest }: HeadingProps) {
