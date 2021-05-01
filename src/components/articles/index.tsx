@@ -16,13 +16,13 @@ const Articles = ({ articles }) => {
           );
         })}
       </Flex>
-      <Flex flexWrap="wrap" w={["100%", "50%"]}>
+      <Flex flexWrap="wrap" w={["100%", "50%"]} justify="center">
         {rightArticles.map((article) => {
           return (
             <Card
               article={article}
               key={`article__left__${article.slug}`}
-              maxW="50%"
+              maxW={["100%", "50%"]}
             />
           );
         })}

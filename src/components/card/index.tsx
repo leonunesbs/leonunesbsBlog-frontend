@@ -5,7 +5,7 @@ import Image from "../image";
 
 const Card = ({ article, ...rest }) => {
   return (
-    <Flex flexDir="column" p={1} justify="center" {...rest}>
+    <Flex flexDir="column" minW="180px" p={1} justify="center" {...rest}>
       <Link
         href={`/article/${article.slug}`}
         _hover={{ textDecoration: "none" }}
