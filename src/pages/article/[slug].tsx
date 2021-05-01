@@ -33,7 +33,7 @@ const Article = ({ article, categories }) => {
           fontFamily="Staatliches"
         />
       </Flex>
-      <Flex flexDir="column" px={[4, 20]} mt={10} w="100vw">
+      <Flex flexDir="column" px={[2, 20]} mt={10} w="100vw">
         <Flex textAlign="justify" flexDir="column">
           <ReactMarkdown source={article.content} escapeHtml={false} />
         </Flex>

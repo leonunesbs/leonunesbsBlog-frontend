@@ -13,7 +13,7 @@ const Card = ({ article, ...rest }) => {
       >
         <Flex flexDir="column" _hover={{ bgColor: "gray.100" }}>
           <Image image={article.image} objectFit="cover" />
-          <Flex p={8}>
+          <Flex p={10}>
             <Flex as={BsArrowReturnRight} w={6} h={4} mx={1} />
             <Flex flexDir="column">
               <Heading
