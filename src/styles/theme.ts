@@ -14,17 +14,22 @@ const theme: ThemeOverride = {
   },
   fonts: {
     heading: "Staatliches",
-    color: "gray.700",
   },
   styles: {
     global: {
-      body: {
-        color: "gray.700",
-      },
+      body: {},
       h1: {
-        color: "gray.700",
         fontFamily: "Staatliches",
-        fontSize: "80px",
+        fontSize: "52px",
+        fontWeight: "bold",
+      },
+      h2: {
+        fontFamily: "Staatliches",
+        fontSize: "32px",
+      },
+      h3: {
+        fontFamily: "Staatliches",
+        fontSize: "20px",
       },
     },
   },
