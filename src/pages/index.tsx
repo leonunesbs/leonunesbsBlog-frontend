@@ -2,18 +2,20 @@ import React from "react";
 import Articles from "../components/articles";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { fetchAPI } from "../lib/api";
+import { fetchAPI } from "../../lib/api";
+import Heading from "../components/heading";
+import { Flex } from "@chakra-ui/react";
 
 const Home = ({ articles, categories, homepage }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.seo} />
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.hero.title}</h1>
+      <section>
+        <Flex flexDir="column" mt={14} px={[2, 52]}>
+          <Heading as="h1" size="4xl" text={homepage.hero.title} />
           <Articles articles={articles} />
-        </div>
-      </div>
+        </Flex>
+      </section>
     </Layout>
   );
 };
