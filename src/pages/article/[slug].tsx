@@ -34,11 +34,11 @@ const Article = ({ article, categories }) => {
           fontFamily="Staatliches"
         />
       </Flex>
-      <Flex flexDir="column" px={[4, 20, 40, 52]} mt={10} w="100vw">
+      <Flex flexDir="column" px={[4, 20]} mt={10} w="100vw">
         <Flex textAlign="justify" flexDir="column">
           <ReactMarkdown source={article.content} escapeHtml={false} />
         </Flex>
-        <Divider mt={6} mb={2} maxW="5%" />
+        <Divider mt={6} mb={2} maxW="10%" minW="120px" />
         <Stack isInline>
           <Flex>
             {article.author.picture && (
@@ -53,7 +53,9 @@ const Article = ({ article, categories }) => {
           <Flex flexDir="column">
             <Text>By {article.author.name}</Text>
             <Text fontWeight="thin" fontSize="sm">
-              <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+              <Moment format="D MMM YYYY" locale="pt-br">
+                {article.published_at}
+              </Moment>
             </Text>
           </Flex>
         </Stack>
