@@ -8,7 +8,7 @@ const Articles = ({ articles }) => {
   const rightArticles = articles.slice(leftArticlesCount, articles.length);
 
   return (
-    <Flex flexDir="row" flexWrap="wrap">
+    <Flex flexDir="row" flexWrap="wrap" w="100%">
       <Flex flexDir="column" w={["100%", "50%"]}>
         {leftArticles.map((article) => {
           return (
