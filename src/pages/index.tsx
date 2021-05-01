@@ -10,12 +10,10 @@ const Home = ({ articles, categories, homepage }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.seo} />
-      <section>
-        <Flex flexDir="column" mt={14} px={[2, 20]}>
-          <Heading as="h1" size="4xl" text={homepage.hero.title} />
-          <Articles articles={articles} />
-        </Flex>
-      </section>
+      <Flex flexDir="column" w="100%" mt={14} px={[2, 20]}>
+        <Heading as="h1" size="4xl" text={homepage.hero.title} />
+        <Articles articles={articles} />
+      </Flex>
     </Layout>
   );
 };
