@@ -1,11 +1,15 @@
-import Articles from "../../components/articles";
-import { fetchAPI } from "../../../lib/api";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
+import React from "react";
 import { Flex } from "@chakra-ui/react";
-import { Heading } from "../../components";
+import { fetchAPI } from "../../../lib";
+import { Articles, Heading, Layout, Seo } from "../../components";
+import { useRouter } from "next/router";
 
 const Category = ({ category, categories }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <p>Carregando...</p>;
+  }
+
   const seo = {
     metaTitle: category.name,
     metaDescription: `All ${category.name} articles`,
@@ -33,7 +37,7 @@ export async function getStaticPaths() {
         slug: category.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
