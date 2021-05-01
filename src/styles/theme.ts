@@ -16,10 +16,6 @@ const theme: ThemeOverride = {
   styles: {
     global: {
       body: {},
-      a: {
-        textDecoration: "none",
-        textDecorationColor: "red.500",
-      },
       h1: {
         fontFamily: "Staatliches",
         fontSize: "80px",
