@@ -1,7 +1,9 @@
 import Articles from "../../components/articles";
-import { fetchAPI } from "../../lib/api";
+import { fetchAPI } from "../../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
+import { Flex } from "@chakra-ui/react";
+import { Heading } from "../../components";
 
 const Category = ({ category, categories }) => {
   const seo = {
@@ -12,12 +14,12 @@ const Category = ({ category, categories }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={seo} />
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{category.name}</h1>
+      <section>
+        <Flex flexDir="column" mt={14} px={[2, 52]}>
+          <Heading as="h1" size="4xl" text={category.name} />
           <Articles articles={category.articles} />
-        </div>
-      </div>
+        </Flex>
+      </section>
     </Layout>
   );
 };
