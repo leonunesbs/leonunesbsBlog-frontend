@@ -64,8 +64,33 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="theme-color" content="#ffffff" />
 
         <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css?family=Staatliches"
+          as="font"
+          crossOrigin="true"
+        />
+
+        <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
+          crossOrigin="true"
+        />
+
+        <link
+          rel="preconnect"
+          href={
+            process.env.AWS_URL ||
+            "https://leonunesbs-blog.s3.sa-east-1.amazonaws.com"
+          }
+          crossOrigin="true"
+        />
+        <link
+          rel="dns-prefetch"
+          href={
+            process.env.AWS_URL ||
+            "https://leonunesbs-blog.s3.sa-east-1.amazonaws.com"
+          }
+          crossOrigin="true"
         />
       </Head>
       <ChakraProvider theme={theme}>
