@@ -46,7 +46,7 @@ const Nav = ({ categories }) => {
             leonunesbsBlog
           </Link>
         </Flex>
-        <Stack isInline align="center">
+        <Stack isInline align="center" aria-label="colorMode">
           <Flex align="center" p={1} mr={2}>
             <Icon as={FiMoon} w={4} h={4} color={color} />
             <Switch

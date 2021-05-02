@@ -23,7 +23,7 @@ const Card = ({ article, ...rest }) => {
             <Flex flexDir="column" flexGrow={1}>
               <Heading
                 fontWeight="bold"
-                as="h4"
+                as="h2"
                 text={article.category?.name || "Sem categoria"}
                 fontSize="lg"
                 mb={4}
