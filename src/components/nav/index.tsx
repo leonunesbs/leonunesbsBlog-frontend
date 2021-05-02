@@ -45,7 +45,7 @@ const Nav = ({ categories: initialCategories }) => {
   return (
     <Flex px={6} py={4} boxShadow="md" bgColor={bg} flexDir="column">
       <Flex as="nav" flexGrow={1} justify="space-between">
-        <Flex>
+        <Flex align="center">
           <NextLink as="/" href="/" passHref>
             <Link
               fontWeight="bold"
