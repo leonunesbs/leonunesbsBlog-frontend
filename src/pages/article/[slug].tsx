@@ -8,7 +8,7 @@ import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { ArticlePageProps } from "./ArticlePage";
+import { ArticlePageProps } from "./Article";
 
 const Article = ({
   article: initialArticle,
