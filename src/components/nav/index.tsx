@@ -62,20 +62,20 @@ const Nav = ({ categories }) => {
           </Flex>
           {categories.map((category) => {
             return (
-              <NextLink
-                as={`/category/${category.slug}`}
-                href="/category/[slug]"
-                passHref
-              >
-                <Link
-                  key={category.id}
-                  display={["none", "flex"]}
-                  color={color}
-                  _hover={{ textDecoration: "none", color: brand }}
+              <Flex key={category.id} display={["none", "flex"]}>
+                <NextLink
+                  as={`/category/${category.slug}`}
+                  href="/category/[slug]"
+                  passHref
                 >
-                  {category.name.toUpperCase()}
-                </Link>
-              </NextLink>
+                  <Link
+                    color={color}
+                    _hover={{ textDecoration: "none", color: brand }}
+                  >
+                    {category.name.toUpperCase()}
+                  </Link>
+                </NextLink>
+              </Flex>
             );
           })}
           <Icon
@@ -103,8 +103,8 @@ const Nav = ({ categories }) => {
                   color={color}
                 />
                 <NextLink
-                  href={`/category/${category.slug}`}
-                  as="/category/[slug]"
+                  as={`/category/${category.slug}`}
+                  href="/category/[slug]"
                   passHref
                 >
                   <Link
