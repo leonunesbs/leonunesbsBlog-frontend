@@ -14,6 +14,7 @@ const Article = ({
 }) => {
   const router = useRouter();
   const color = useColorModeValue("gray.700", "gray.100");
+  const bg = useColorModeValue("gray.100", "gray.700");
 
   const { data: categories } = useFetch("/categories", {
     initialData: initialCategories,
@@ -51,12 +52,15 @@ const Article = ({
         textColor={color}
         py={60}
       >
-        <Heading
-          text={article.title}
-          color="white"
-          textAlign="center"
-          fontFamily="Staatliches"
-        />
+        <Flex bgColor={bg} p={[4, 6]} mx={2} borderRadius="75px">
+          <Heading
+            text={article.title}
+            color={color}
+            textAlign="center"
+            fontFamily="Staatliches"
+            opacity={1}
+          />
+        </Flex>
       </Flex>
       <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>
         <Flex textAlign="justify" flexDir="column">
