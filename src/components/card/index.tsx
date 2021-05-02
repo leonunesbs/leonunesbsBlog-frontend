@@ -28,12 +28,12 @@ const Card = ({ article, ...rest }) => {
           <Flex flexDir="column" _hover={{ bgColor: bg }}>
             <Skeleton
               isLoaded={!loading}
-              minH="450px"
+              minH={loading && "450px"}
               startColor={brand}
               endColor={skeletonEndColor}
             >
               <Image
-                image={article.image}
+                image={article.image.formats.medium}
                 objectFit="cover"
                 onLoad={() => setLoading(false)}
               />
