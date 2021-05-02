@@ -9,8 +9,8 @@ import {
 import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
 import React, { useState } from "react";
-import { Heading } from "..";
-import Image from "../image";
+import { Heading } from "../..";
+import Image from "../../cells/image";
 import Moment from "react-moment";
 
 const Card = ({ article, ...rest }) => {

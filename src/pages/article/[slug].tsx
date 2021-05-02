@@ -69,11 +69,7 @@ const Article = ({
           justify="center"
           textAlign="center"
         >
-          <Heading
-            text={article.title}
-            color={color}
-            fontFamily="Staatliches"
-          />
+          <Heading text={article.title} />
         </Flex>
       </Flex>
       <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>

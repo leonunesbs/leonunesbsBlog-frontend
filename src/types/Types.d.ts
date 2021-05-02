@@ -1,4 +1,4 @@
-import { SeoProps } from "../components/seo/Seo";
+import { SeoProps } from "../components/cells/seo/Seo";
 
 export interface ArticleProps {
   id: number;

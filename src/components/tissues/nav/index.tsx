@@ -2,45 +2,29 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Collapse,
   Flex,
-  FormControl,
-  FormLabel,
   Icon,
   Link,
   Stack,
-  Switch,
-  useColorMode,
   useColorModeValue,
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
-import { FiMoon, FiSun } from "react-icons/fi";
 import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
-import { dynamicSort } from "../../../libs";
-import { Divider, Social } from "../../components";
+import { dynamicSort } from "../../../../libs";
+import { ColorModeSwitch, Divider, Social } from "../..";
 import { NavProps } from "./Nav";
 
 const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const navRef = useRef<HTMLDivElement>(null);
 
-  const [userColorMode, setUserColorMode] = useState(false);
   const [categories, setCategories] = useState(initialCategories);
 
-  const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("gray.200", "gray.800");
   const color = useColorModeValue("gray.700", "gray.100");
   const brand = useColorModeValue("brand.500", "brand.300");
-
-  // Checks colorMode and sets Switch value
-  useEffect(() => {
-    if (colorMode === "light") {
-      setUserColorMode(true);
-    } else {
-      setUserColorMode(false);
-    }
-  }, [colorMode]);
 
   // Ordering categories
   useEffect(() => {
@@ -74,21 +58,7 @@ const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
           </NextLink>
         </Flex>
         <Stack isInline spacing={6} align="center">
-          <FormControl display="flex" alignItems="center" p={1} mr={2}>
-            <FormLabel htmlFor="color-mode-select" mb="0" display="none">
-              Color mode
-            </FormLabel>
-            <Icon as={FiMoon} w={4} h={4} color={color} />
-            <Switch
-              id="color-mode-select"
-              size="md"
-              color={color}
-              mx={2}
-              onChange={toggleColorMode}
-              isChecked={userColorMode}
-            />
-            <Icon as={FiSun} w={4} h={4} color={color} />
-          </FormControl>
+          <ColorModeSwitch />
           {categories.map((category) => {
             return (
               <Flex key={category.id} display={["none", "none", "flex"]}>
