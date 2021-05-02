@@ -1,7 +1,8 @@
-import { getStrapiMedia } from "../../../lib/media";
+import { getStrapiMedia } from "../../../libs/media";
 import { Image as ChakraImage } from "@chakra-ui/react";
+import { ImageProps } from "./Image";
 
-const Image = ({ image, ...rest }) => {
+const Image = ({ image, ...rest }: ImageProps) => {
   const imageUrl = getStrapiMedia(image);
   return (
     <ChakraImage

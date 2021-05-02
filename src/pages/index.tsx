@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchAPI } from "../../lib";
+import { fetchAPI } from "../../libs";
 import { Articles, Heading, Layout, Seo } from "../components";
 import { Flex } from "@chakra-ui/react";
 

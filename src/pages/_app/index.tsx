@@ -1,7 +1,7 @@
 import App, { AppContext, AppProps } from "next/app";
 import Head from "next/head";
 import { createContext } from "react";
-import { fetchAPI } from "../../../lib/api";
+import { fetchAPI } from "../../../libs/api";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../styles/theme";
 

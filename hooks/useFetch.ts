@@ -1,5 +1,5 @@
 import useSWR, { SWRConfiguration } from "swr";
-import { fetchAPI } from "../lib";
+import { fetchAPI } from "../libs";
 
 const useFetch = (url: string, config?: SWRConfiguration) => {
   const { data, error, mutate } = useSWR(

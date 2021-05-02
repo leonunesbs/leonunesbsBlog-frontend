@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { Seo, Layout, Image, Heading } from "../../components";
-import { getStrapiMedia, fetchAPI } from "../../../lib";
+import { getStrapiMedia, fetchAPI } from "../../../libs";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -50,15 +50,21 @@ const Article = ({
         justify="center"
         w="100%"
         textColor={color}
-        py={60}
+        py={48}
       >
-        <Flex bgColor={bg} p={[4, 6]} mx={2} borderRadius="75px">
+        <Flex
+          bgColor={bg}
+          p={6}
+          mx={2}
+          borderRadius="75px"
+          align="center"
+          justify="center"
+          textAlign="center"
+        >
           <Heading
             text={article.title}
             color={color}
-            textAlign="center"
             fontFamily="Staatliches"
-            opacity={1}
           />
         </Flex>
       </Flex>
