@@ -13,26 +13,26 @@ const theme: ThemeOverride = {
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "Staatliches sans-serif",
+    heading: "Staatliches",
   },
   styles: {
     global: {
       body: {},
       h1: {
-        fontFamily: "Staatliches sans-serif",
+        fontFamily: "Staatliches",
         fontSize: "72px",
         fontWeight: "bold",
       },
       h2: {
-        fontFamily: "Staatliches sans-serif",
+        fontFamily: "Staatliches",
         fontSize: "58px",
       },
       h3: {
-        fontFamily: "Staatliches sans-serif",
+        fontFamily: "Staatliches",
         fontSize: "38px",
       },
       h4: {
-        fontFamily: "Staatliches sans-serif",
+        fontFamily: "Staatliches",
         fontSize: "24px",
       },
     },
