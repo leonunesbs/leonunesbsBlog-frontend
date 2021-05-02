@@ -77,13 +77,11 @@ const Article = ({
         </Flex>
       </Flex>
       <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>
-        <Flex textAlign="justify" flexDir="column">
-          <ReactMarkdown
-            source={article.content}
-            escapeHtml={false}
-            renderers={ChakraUIRenderer()}
-          />
-        </Flex>
+        <ReactMarkdown
+          source={article.content}
+          escapeHtml={false}
+          renderers={ChakraUIRenderer()}
+        />
         <Divider mt={6} mb={2} maxW="10%" minW="120px" />
         <Stack isInline>
           <Flex>
