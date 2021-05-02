@@ -28,6 +28,7 @@ const Card = ({ article, ...rest }) => {
           <Flex flexDir="column" _hover={{ bgColor: bg }}>
             <Skeleton
               isLoaded={!loading}
+              minH="450px"
               startColor={brand}
               endColor={skeletonEndColor}
             >
