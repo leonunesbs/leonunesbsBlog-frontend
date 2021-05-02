@@ -48,7 +48,7 @@ const Nav = ({ categories }) => {
             </Link>
           </NextLink>
         </Flex>
-        <Stack isInline align="center" aria-label="colorMode">
+        <Stack isInline spacing={6} align="center" aria-label="colorMode">
           <Flex align="center" p={1} mr={2}>
             <Icon as={FiMoon} w={4} h={4} color={color} />
             <Switch
@@ -62,7 +62,7 @@ const Nav = ({ categories }) => {
           </Flex>
           {categories.map((category) => {
             return (
-              <Flex key={category.id} display={["none", "flex"]}>
+              <Flex key={category.id} display={["none", "none", "flex"]}>
                 <NextLink
                   as={`/category/${category.slug}`}
                   href="/category/[slug]"
@@ -80,7 +80,7 @@ const Nav = ({ categories }) => {
           })}
           <Icon
             as={IoMdMenu}
-            display={["flex", "none"]}
+            display={["flex", "flex", "none"]}
             w={6}
             h={6}
             onClick={onToggle}
@@ -91,7 +91,7 @@ const Nav = ({ categories }) => {
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity unmountOnExit>
-        <Stack p={4} mt="4" rounded="md" display={["flex", "none"]}>
+        <Stack p={4} mt="4" rounded="md" display={["flex", "flex", "none"]}>
           {categories.map((category) => {
             return (
               <Flex key={category.id}>
