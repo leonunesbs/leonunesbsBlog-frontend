@@ -1,8 +1,29 @@
 import { Flex } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../card";
 
-const Articles = ({ articles }) => {
+function dynamicSort(property: string) {
+  var sortOrder = 1;
+  if (property[0] === "-") {
+    sortOrder = -1;
+    property = property.substr(1);
+  }
+  return function (a, b) {
+    /* next line works with strings and numbers,
+     * and you may want to customize it to your needs
+     */
+    var result =
+      a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+    return result * sortOrder;
+  };
+}
+
+const Articles = ({ articles: initialArticles }) => {
+  const [articles, setArticles] = useState(initialArticles);
+  useEffect(() => {
+    setArticles(articles.sort(dynamicSort("publishedAt")));
+  }, [articles]);
+
   const leftArticlesCount = Math.ceil(articles.length / 5);
   const leftArticles = articles.slice(0, leftArticlesCount);
   const rightArticles = articles.slice(leftArticlesCount, articles.length);

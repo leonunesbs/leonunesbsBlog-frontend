@@ -1,6 +1,7 @@
+import React from "react";
 import { Flex } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
-import Nav from "../nav";
+import { Footer, Nav } from "../../components";
 
 const Layout = ({ children, categories }) => {
   const bg = useColorModeValue("gray.100", "gray.700");
@@ -11,6 +12,7 @@ const Layout = ({ children, categories }) => {
       <Flex flexDir="column" w="100%" h="100%">
         {children}
       </Flex>
+      <Footer categories={categories} />
     </Flex>
   );
 };

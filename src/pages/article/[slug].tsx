@@ -6,10 +6,25 @@ import { getStrapiMedia, fetchAPI } from "../../../lib";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useFetch } from "../../../hooks";
 
-const Article = ({ article, categories }) => {
+const Article = ({
+  article: initialArticle,
+  categories: initialCategories,
+}) => {
   const router = useRouter();
   const color = useColorModeValue("gray.700", "gray.100");
+
+  const { data: categories } = useFetch("/categories", {
+    initialData: initialCategories,
+  });
+
+  const { data: article } = useFetch(
+    `/articles?slug=${router.query.slug}&status=published`,
+    {
+      initialData: initialArticle,
+    }
+  );
 
   if (router.isFallback) {
     return <p>Carregando...</p>;
@@ -43,7 +58,7 @@ const Article = ({ article, categories }) => {
           fontFamily="Staatliches"
         />
       </Flex>
-      <Flex flexDir="column" px={[2, 20]} mt={10} w="100vw" textColor={color}>
+      <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>
         <Flex textAlign="justify" flexDir="column">
           <ReactMarkdown source={article.content} escapeHtml={false} />
         </Flex>

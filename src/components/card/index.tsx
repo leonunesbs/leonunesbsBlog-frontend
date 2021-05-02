@@ -22,7 +22,7 @@ const Card = ({ article, ...rest }) => {
                 <Heading
                   fontWeight="bold"
                   as="h2"
-                  text={article.category?.name || "Sem categoria"}
+                  text={article.category.name}
                   fontSize="lg"
                   mb={4}
                 />
