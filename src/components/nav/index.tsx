@@ -13,6 +13,7 @@ import {
 import { IoMdMenu } from "react-icons/io";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { BsArrowReturnRight } from "react-icons/bs";
+import NextLink from "next/link";
 
 const Nav = ({ categories }) => {
   const { isOpen, onToggle } = useDisclosure();
@@ -37,14 +38,15 @@ const Nav = ({ categories }) => {
     <Flex px={6} py={4} boxShadow="md" bgColor={bg} flexDir="column">
       <Flex as="nav" flexGrow={1} justify="space-between">
         <Flex>
-          <Link
-            href="/"
-            fontWeight="bold"
-            color={color}
-            _hover={{ textDecoration: "none", color: brand }}
-          >
-            leonunesbsBlog
-          </Link>
+          <NextLink as="/" href="/" passHref>
+            <Link
+              fontWeight="bold"
+              color={color}
+              _hover={{ textDecoration: "none", color: brand }}
+            >
+              leonunesbsBlog
+            </Link>
+          </NextLink>
         </Flex>
         <Stack isInline align="center" aria-label="colorMode">
           <Flex align="center" p={1} mr={2}>
@@ -60,15 +62,20 @@ const Nav = ({ categories }) => {
           </Flex>
           {categories.map((category) => {
             return (
-              <Link
-                key={category.id}
-                display={["none", "flex"]}
-                href={`/category/${category.slug}`}
-                color={color}
-                _hover={{ textDecoration: "none", color: brand }}
+              <NextLink
+                as={`/category/${category.slug}`}
+                href="/category/[slug]"
               >
-                {category.name.toUpperCase()}
-              </Link>
+                <Link
+                  key={category.id}
+                  display={["none", "flex"]}
+                  href={`/category/${category.slug}`}
+                  color={color}
+                  _hover={{ textDecoration: "none", color: brand }}
+                >
+                  {category.name.toUpperCase()}
+                </Link>
+              </NextLink>
             );
           })}
           <Icon
@@ -95,13 +102,17 @@ const Nav = ({ categories }) => {
                   mx={1}
                   color={color}
                 />
-                <Link
-                  color={color}
+                <NextLink
                   href={`/category/${category.slug}`}
-                  _hover={{ textDecoration: "none", color: brand }}
+                  as="/category/[slug]"
                 >
-                  {category.name.toUpperCase()}
-                </Link>
+                  <Link
+                    color={color}
+                    _hover={{ textDecoration: "none", color: brand }}
+                  >
+                    {category.name.toUpperCase()}
+                  </Link>
+                </NextLink>
               </Flex>
             );
           })}
