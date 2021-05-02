@@ -20,16 +20,20 @@ const theme: ThemeOverride = {
       body: {},
       h1: {
         fontFamily: "Staatliches",
-        fontSize: "52px",
+        fontSize: "72px",
         fontWeight: "bold",
       },
       h2: {
         fontFamily: "Staatliches",
-        fontSize: "32px",
+        fontSize: "58px",
       },
       h3: {
         fontFamily: "Staatliches",
-        fontSize: "20px",
+        fontSize: "38px",
+      },
+      h4: {
+        fontFamily: "Staatliches",
+        fontSize: "24px",
       },
     },
   },

@@ -3,9 +3,22 @@ import { Flex } from "@chakra-ui/react";
 import { fetchAPI } from "../../../lib";
 import { Articles, Heading, Layout, Seo } from "../../components";
 import { useRouter } from "next/router";
+import { useFetch } from "../../../hooks";
 
-const Category = ({ category, categories }) => {
+const Category = ({
+  category: initialCategory,
+  categories: initialCategories,
+}) => {
   const router = useRouter();
+
+  const { data: categories } = useFetch("/categories", {
+    initialData: initialCategories,
+  });
+
+  const { data: category } = useFetch(`/categories?slug=${router.query.slug}`, {
+    initialData: initialCategory,
+  });
+
   if (router.isFallback) {
     return <p>Carregando...</p>;
   }
@@ -15,15 +28,22 @@ const Category = ({ category, categories }) => {
     metaDescription: `All ${category.name} articles`,
   };
 
+  const articles = category.articles.map((art) => ({
+    ...art,
+    category: {
+      id: art.category,
+      slug: router.query.slug,
+      name: router.query.slug,
+    },
+  }));
+
   return (
     <Layout categories={categories}>
       <Seo seo={seo} />
-      <section>
-        <Flex flexDir="column" mt={14} px={[2, 20]}>
-          <Heading as="h1" size="4xl" text={category.name} />
-          <Articles articles={category.articles} />
-        </Flex>
-      </section>
+      <Flex flexDir="column" mt={14} px={[10, 40]}>
+        <Heading as="h1" size="4xl" text={category.name} />
+        <Articles articles={articles} />
+      </Flex>
     </Layout>
   );
 };

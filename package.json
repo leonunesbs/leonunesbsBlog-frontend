@@ -22,7 +22,8 @@
     "react-dom": "16.13.1",
     "react-icons": "^4.2.0",
     "react-markdown": "^4.2.2",
-    "react-moment": "^0.9.6"
+    "react-moment": "^0.9.6",
+    "swr": "^0.5.5"
   },
   "license": "MIT",
   "devDependencies": {
