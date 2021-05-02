@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {
   Collapse,
   Flex,
+  FormControl,
+  FormLabel,
   Icon,
   Link,
   Stack,
@@ -54,10 +56,14 @@ const Nav = ({ categories: initialCategories }) => {
             </Link>
           </NextLink>
         </Flex>
-        <Stack isInline spacing={6} align="center" aria-label="colorMode">
-          <Flex align="center" p={1} mr={2}>
+        <Stack isInline spacing={6} align="center">
+          <FormControl display="flex" alignItems="center" p={1} mr={2}>
+            <FormLabel htmlFor="color-mode-select" mb="0" visibility="hidden">
+              Color mode
+            </FormLabel>
             <Icon as={FiMoon} w={4} h={4} color={color} />
             <Switch
+              id="color-mode-select"
               size="md"
               color={color}
               mx={2}
@@ -65,7 +71,7 @@ const Nav = ({ categories: initialCategories }) => {
               isChecked={userColorMode}
             />
             <Icon as={FiSun} w={4} h={4} color={color} />
-          </Flex>
+          </FormControl>
           {categories.map((category) => {
             return (
               <Flex key={category.id} display={["none", "none", "flex"]}>
