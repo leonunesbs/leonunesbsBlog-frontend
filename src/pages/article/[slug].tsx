@@ -42,7 +42,12 @@ const Article = ({
 
   return (
     <Layout categories={categories}>
-      <Seo seo={seo} />
+      <Seo
+        metaTitle={seo.metaTitle}
+        metaDescription={seo.metaDescription}
+        shareImage={seo.shareImage}
+        article={seo.article}
+      />
       <Flex
         backgroundImage={`url(${imageUrl})`}
         backgroundSize="cover"
