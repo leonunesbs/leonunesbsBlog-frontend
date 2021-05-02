@@ -67,13 +67,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           rel="preload"
           href="https://fonts.googleapis.com/css?family=Staatliches"
           as="font"
-          crossOrigin="true"
+          crossOrigin="anonymous"
         />
 
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
-          crossOrigin="true"
         />
 
         <link
@@ -82,7 +81,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             process.env.AWS_URL ||
             "https://leonunesbs-blog.s3.sa-east-1.amazonaws.com"
           }
-          crossOrigin="true"
+          crossOrigin="anonymous"
         />
         <link
           rel="dns-prefetch"
@@ -90,7 +89,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             process.env.AWS_URL ||
             "https://leonunesbs-blog.s3.sa-east-1.amazonaws.com"
           }
-          crossOrigin="true"
+          crossOrigin="anonymous"
         />
       </Head>
       <ChakraProvider theme={theme}>
