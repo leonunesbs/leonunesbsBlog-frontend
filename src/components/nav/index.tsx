@@ -65,11 +65,11 @@ const Nav = ({ categories }) => {
               <NextLink
                 as={`/category/${category.slug}`}
                 href="/category/[slug]"
+                passHref
               >
                 <Link
                   key={category.id}
                   display={["none", "flex"]}
-                  href={`/category/${category.slug}`}
                   color={color}
                   _hover={{ textDecoration: "none", color: brand }}
                 >
@@ -105,6 +105,7 @@ const Nav = ({ categories }) => {
                 <NextLink
                   href={`/category/${category.slug}`}
                   as="/category/[slug]"
+                  passHref
                 >
                   <Link
                     color={color}
