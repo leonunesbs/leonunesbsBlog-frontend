@@ -3073,6 +3073,11 @@ caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001113, caniuse-lite@^1.0.300012
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001219.tgz#5bfa5d0519f41f993618bd318f606a4c4c16156b"
   integrity sha512-c0yixVG4v9KBc/tQ2rlbB3A/bgBFRvl8h8M4IeUbqCca4gsiCfvtaheUssbnux/Mb66Vjz7x8yYjDgYcNQOhyQ==
 
+chakra-ui-markdown-renderer@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chakra-ui-markdown-renderer/-/chakra-ui-markdown-renderer-1.1.0.tgz#48dab38309d677ebf28ba75453abb2efb3e41038"
+  integrity sha512-0iyxulaa6Y9lvAZdL2+8st51osD+UMuBcDWi3OHY7fS4uKE6TVp+9c6E2suV0nZeSGznkuza7bREeP0/6Fx8lA==
+
 chalk@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.0.0.tgz#6e98081ed2d17faab615eb52ac66ec1fe6209e72"

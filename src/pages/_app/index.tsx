@@ -63,16 +63,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta name="theme-color" content="#ffffff" />
 
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css?family=Staatliches"
-          as="font"
-          crossOrigin="anonymous"
-        />
-
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap"
         />
 
         <link

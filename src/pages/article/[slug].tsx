@@ -7,6 +7,7 @@ import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 
 const Article = ({
   article: initialArticle,
@@ -70,7 +71,11 @@ const Article = ({
       </Flex>
       <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>
         <Flex textAlign="justify" flexDir="column">
-          <ReactMarkdown source={article.content} escapeHtml={false} />
+          <ReactMarkdown
+            source={article.content}
+            escapeHtml={false}
+            renderers={ChakraUIRenderer()}
+          />
         </Flex>
         <Divider mt={6} mb={2} maxW="10%" minW="120px" />
         <Stack isInline>

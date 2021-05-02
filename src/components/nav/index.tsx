@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Collapse,
   Flex,
@@ -11,29 +11,29 @@ import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
+  useOutsideClick,
 } from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
 import { dynamicSort } from "../../../libs";
+import { Divider, Social } from "../../components";
+import { NavProps } from "./Nav";
 
-const Nav = ({ categories: initialCategories }) => {
-  const { isOpen, onToggle } = useDisclosure();
+const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
+  const { isOpen, onToggle, onClose } = useDisclosure();
+  const navRef = useRef<HTMLDivElement>(null);
 
   const [userColorMode, setUserColorMode] = useState(false);
   const [categories, setCategories] = useState(initialCategories);
 
   const { colorMode, toggleColorMode } = useColorMode();
-
-  useEffect(() => {
-    setCategories(categories.sort(dynamicSort("position")));
-  }, [categories]);
-
   const bg = useColorModeValue("gray.200", "gray.800");
   const color = useColorModeValue("gray.700", "gray.100");
   const brand = useColorModeValue("brand.500", "brand.300");
 
+  // Checks colorMode and sets Switch value
   useEffect(() => {
     if (colorMode === "light") {
       setUserColorMode(true);
@@ -42,8 +42,25 @@ const Nav = ({ categories: initialCategories }) => {
     }
   }, [colorMode]);
 
+  // Ordering categories
+  useEffect(() => {
+    setCategories(categories.sort(dynamicSort("position")));
+  }, [categories]);
+
+  useOutsideClick({
+    ref: navRef,
+    handler: () => onClose(),
+  });
+
   return (
-    <Flex px={6} py={4} boxShadow="md" bgColor={bg} flexDir="column">
+    <Flex
+      ref={navRef}
+      px={6}
+      py={4}
+      boxShadow="md"
+      bgColor={bg}
+      flexDir="column"
+    >
       <Flex as="nav" flexGrow={1} justify="space-between">
         <Flex align="center">
           <NextLink as="/" href="/" passHref>
@@ -129,6 +146,8 @@ const Nav = ({ categories: initialCategories }) => {
               </Flex>
             );
           })}
+          <Divider />
+          <Social homepage={homepage} />
         </Stack>
       </Collapse>
     </Flex>
