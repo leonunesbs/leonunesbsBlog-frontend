@@ -22,19 +22,20 @@ const Card = ({ article, ...rest }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Flex flexDir="column" minW="180px" p={1} justify="center" {...rest}>
+    <Flex flexDir="column" minW="180px" p={1} {...rest}>
       <NextLink as={`/article/${article.slug}`} href="/article/[slug]" passHref>
         <Link color={color} _hover={{ textDecoration: "none", color: brand }}>
           <Flex flexDir="column" _hover={{ bgColor: bg }}>
             <Skeleton
               isLoaded={!loading}
-              minH="450px"
+              minH={loading && "450px"}
               startColor={brand}
               endColor={skeletonEndColor}
             >
               <Image
-                image={article.image}
+                image={article.image.formats.medium}
                 objectFit="cover"
+                w="100%"
                 onLoad={() => setLoading(false)}
               />
             </Skeleton>
