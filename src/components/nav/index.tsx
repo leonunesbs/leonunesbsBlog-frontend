@@ -58,7 +58,7 @@ const Nav = ({ categories: initialCategories }) => {
         </Flex>
         <Stack isInline spacing={6} align="center">
           <FormControl display="flex" alignItems="center" p={1} mr={2}>
-            <FormLabel htmlFor="color-mode-select" mb="0" visibility="hidden">
+            <FormLabel htmlFor="color-mode-select" mb="0" display="none">
               Color mode
             </FormLabel>
             <Icon as={FiMoon} w={4} h={4} color={color} />
