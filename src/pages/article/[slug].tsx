@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { Seo, Layout, Image, Heading } from "../../components";
-import { getStrapiMedia, fetchAPI } from "../../../lib";
+import { getStrapiMedia, fetchAPI } from "../../../libs";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";

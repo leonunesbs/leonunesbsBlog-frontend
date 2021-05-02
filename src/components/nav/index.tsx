@@ -14,13 +14,19 @@ import { IoMdMenu } from "react-icons/io";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
+import { dynamicSort } from "../../../libs";
 
-const Nav = ({ categories }) => {
+const Nav = ({ categories: initialCategories }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   const [userColorMode, setUserColorMode] = useState(false);
+  const [categories, setCategories] = useState(initialCategories);
 
   const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+    setCategories(categories.sort(dynamicSort("position")));
+  }, [categories]);
 
   const bg = useColorModeValue("gray.200", "gray.800");
   const color = useColorModeValue("gray.700", "gray.100");
