@@ -7,7 +7,7 @@ const Home = ({ articles, categories, homepage }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.seo} />
-      <Flex flexDir="column" w="100%" mt={14} px={[10, 40]}>
+      <Flex flexDir="column" w="100%" mt={14} px={[10, 16, 24, 40]}>
         <Heading as="h1" size="4xl" text={homepage.hero.title} />
         <Articles articles={articles} />
       </Flex>

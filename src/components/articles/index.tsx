@@ -6,7 +6,7 @@ import Card from "../card";
 const Articles = ({ articles: initialArticles }) => {
   const [articles, setArticles] = useState(initialArticles);
   useEffect(() => {
-    setArticles(articles.sort(dynamicSort("publishedAt")));
+    setArticles(articles.sort(dynamicSort("-publishedAt")));
   }, [articles]);
 
   const leftArticlesCount = Math.ceil(articles.length / 5);
@@ -27,6 +27,7 @@ const Articles = ({ articles: initialArticles }) => {
           return (
             <Card
               article={article}
+              justify="center"
               key={`article__left__${article.slug}`}
               maxW={["100%", "50%"]}
             />
