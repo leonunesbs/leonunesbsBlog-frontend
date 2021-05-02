@@ -13,28 +13,12 @@ const theme: ThemeOverride = {
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "Staatliches",
+    heading: "Staatliches, sans-serif",
+    body: "JetBrains Mono, monospace",
   },
   styles: {
     global: {
       body: {},
-      h1: {
-        fontFamily: "Staatliches",
-        fontSize: "72px",
-        fontWeight: "bold",
-      },
-      h2: {
-        fontFamily: "Staatliches",
-        fontSize: "58px",
-      },
-      h3: {
-        fontFamily: "Staatliches",
-        fontSize: "38px",
-      },
-      h4: {
-        fontFamily: "Staatliches",
-        fontSize: "24px",
-      },
     },
   },
 };
