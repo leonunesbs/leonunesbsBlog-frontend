@@ -5,5 +5,5 @@ import { CategoryProps, HomepageProps } from "../../types/Types";
 export interface LayoutProps extends FlexProps {
   children: ReactNode;
   categories: CategoryProps[];
-  homepage?: HomepageProps;
+  homepage: HomepageProps;
 }

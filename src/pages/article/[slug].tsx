@@ -8,11 +8,13 @@ import { useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { ArticlePageProps } from "./ArticlePage";
 
 const Article = ({
   article: initialArticle,
   categories: initialCategories,
-}) => {
+  homepage,
+}: ArticlePageProps) => {
   const router = useRouter();
   const color = useColorModeValue("gray.700", "gray.100");
   const bg = useColorModeValue("gray.100", "gray.700");
@@ -41,7 +43,7 @@ const Article = ({
   };
 
   return (
-    <Layout categories={categories}>
+    <Layout categories={categories} homepage={homepage}>
       <Seo
         metaTitle={seo.metaTitle}
         metaDescription={seo.metaDescription}
@@ -125,9 +127,10 @@ export async function getStaticProps({ params }) {
     `/articles?slug=${params.slug}&status=published`
   );
   const categories = await fetchAPI("/categories");
+  const homepage = await fetchAPI("/homepage");
 
   return {
-    props: { article: articles[0], categories },
+    props: { article: articles[0], categories, homepage },
     revalidate: 1,
   };
 }
