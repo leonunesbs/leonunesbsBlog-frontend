@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useContext } from "react";
-import { GlobalContext } from "../../pages/_app";
-import { getStrapiMedia } from "../../../libs/media";
+import { GlobalContext } from "../../../pages/_app";
+import { getStrapiMedia } from "../../../../libs/media";
 import { SeoProps } from "./Seo";
 
 const Seo = ({ metaTitle, metaDescription, shareImage }: SeoProps) => {

@@ -1,17 +1,19 @@
-import Articles from "./articles";
-import Card from "./card";
-import Divider from "./divider";
-import Heading from "./heading";
-import Footer from "./footer";
-import Image from "./image";
-import Layout from "./layout";
-import Nav from "./nav";
-import Seo from "./seo";
-import Social from "./social";
+import ColorModeSwitch from "./cells/colorModeSwitch";
+import Heading from "./cells/heading";
+import Image from "./cells/image";
+import Footer from "./tissues/footer";
+import Layout from "./organs/layout";
+import Nav from "./tissues/nav";
+import Articles from "./tissues/articles";
+import Card from "./tissues/card";
+import Divider from "./cells/divider";
+import Seo from "./cells/seo";
+import Social from "./cells/social";
 
 export {
   Articles,
   Card,
+  ColorModeSwitch,
   Divider,
   Footer,
   Heading,

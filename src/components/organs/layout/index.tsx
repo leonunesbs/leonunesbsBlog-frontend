@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
-import { Footer, Nav } from "../../components";
+import { Footer, Nav } from "../..";
 import { LayoutProps } from "./Layout";
 
 const Layout = ({ children, categories, homepage }: LayoutProps) => {

@@ -42,7 +42,7 @@ const Category = ({
     <Layout categories={categories} homepage={homepage}>
       <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <Flex flexDir="column" mt={14} px={[10, 40]}>
-        <Heading as="h1" size="4xl" text={category.name} />
+        <Heading text={category.name} />
         <Articles articles={articles} />
       </Flex>
     </Layout>
