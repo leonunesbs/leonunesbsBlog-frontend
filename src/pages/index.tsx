@@ -2,11 +2,16 @@ import React from "react";
 import { fetchAPI } from "../../libs";
 import { Articles, Heading, Layout, Seo } from "../components";
 import { Flex } from "@chakra-ui/react";
+import { HomeProps } from "../types/Home";
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ articles, categories, homepage }: HomeProps) => {
   return (
-    <Layout categories={categories}>
-      <Seo seo={homepage.seo} />
+    <Layout categories={categories} homepage={homepage}>
+      <Seo
+        metaDescription={homepage.seo.metaDescription}
+        metaTitle={homepage.seo.metaTitle}
+        shareImage={homepage.seo.shareImage}
+      />
       <Flex flexDir="column" w="100%" mt={14} px={[10, 16, 24, 40]}>
         <Heading as="h1" size="4xl" text={homepage.hero.title} />
         <Articles articles={articles} />

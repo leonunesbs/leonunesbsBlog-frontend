@@ -19,8 +19,9 @@ import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
 import { dynamicSort } from "../../../libs";
 import { Divider, Social } from "../../components";
+import { NavProps } from "./Nav";
 
-const Nav = ({ categories: initialCategories }) => {
+const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -146,7 +147,7 @@ const Nav = ({ categories: initialCategories }) => {
             );
           })}
           <Divider />
-          <Social />
+          <Social homepage={homepage} />
         </Stack>
       </Collapse>
     </Flex>

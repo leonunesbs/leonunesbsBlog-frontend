@@ -8,6 +8,7 @@ import { useFetch } from "../../../hooks";
 const Category = ({
   category: initialCategory,
   categories: initialCategories,
+  homepage,
 }) => {
   const router = useRouter();
 
@@ -38,8 +39,8 @@ const Category = ({
   }));
 
   return (
-    <Layout categories={categories}>
-      <Seo seo={seo} />
+    <Layout categories={categories} homepage={homepage}>
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <Flex flexDir="column" mt={14} px={[10, 40]}>
         <Heading as="h1" size="4xl" text={category.name} />
         <Articles articles={articles} />
@@ -64,9 +65,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const category = (await fetchAPI(`/categories?slug=${params.slug}`))[0];
   const categories = await fetchAPI("/categories");
+  const homepage = await fetchAPI("/homepage");
 
   return {
-    props: { category, categories },
+    props: { category, categories, homepage },
     revalidate: 1,
   };
 }
