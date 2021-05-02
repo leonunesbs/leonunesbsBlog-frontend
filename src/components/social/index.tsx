@@ -14,7 +14,6 @@ import {
   AiFillTwitterSquare,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import NextLink from "next/link";
 import { SocialProps } from "./Social";
 
 function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
@@ -61,9 +60,10 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
           );
         })}
       </Stack>
-      <NextLink passHref href="https://leonunesbs.vercel.app">
+      <Tooltip hasArrow label="meu portfolio" bg={bg} color={colorInverted}>
         <Link
           isExternal
+          href="https://leonunesbs.vercel.app"
           textAlign="center"
           color={color}
           fontSize="sm"
@@ -71,7 +71,7 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
         >
           leonunesbs.vercel.app
         </Link>
-      </NextLink>
+      </Tooltip>
     </>
   );
 }
