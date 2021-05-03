@@ -85,7 +85,7 @@ const Article = ({
               <Image
                 image={article.author.picture}
                 position="static"
-                minW="0px"
+                minH="0px"
                 borderRadius="full"
                 boxSize="30px"
               />
