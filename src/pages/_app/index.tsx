@@ -14,6 +14,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        {/* START favicon + PWA */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -28,18 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link
           rel="icon"
           type="image/png"
-          sizes="194x194"
-          href="/favicon/favicon-194x194.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/favicon/android-chrome-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
@@ -47,11 +36,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link
           rel="mask-icon"
           href="/favicon/safari-pinned-tab.svg"
-          color="#956fff"
+          color="#153e75"
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="apple-mobile-web-app-title" content="leonunesbsBlog" />
-        <meta name="application-name" content="leonunesbsBlog" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
           name="msapplication-TileImage"
@@ -62,6 +49,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           content="/favicon/browserconfig.xml"
         />
         <meta name="theme-color" content="#ffffff" />
+        {/* END favicon + PWA */}
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
