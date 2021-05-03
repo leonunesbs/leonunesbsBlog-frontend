@@ -12,7 +12,7 @@ function Footer({ categories, homepage }) {
     <Flex
       px={6}
       py={4}
-      boxShadow="md"
+      boxShadow="inner"
       minH="120px"
       bgColor={bg}
       flexDir="column"
