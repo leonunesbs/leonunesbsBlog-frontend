@@ -19,13 +19,13 @@ function Footer({ categories, homepage }) {
       align="center"
       justify="center"
     >
-      <NextLink as="/" href="/" passHref>
-        <Link>
-          <Flex minW="85px" minH="85px" align="center" justify="center">
-            <LogoNoText />
-          </Flex>
-        </Link>
-      </NextLink>
+      {/* <NextLink as="/" href="/" passHref>
+        <Link> */}
+      <Flex minW="85px" minH="85px" align="center" justify="center">
+        <LogoNoText />
+      </Flex>
+      {/* </Link>
+      </NextLink> */}
       <Divider my={4} maxW="50%" />
       <Social homepage={homepage} />
     </Flex>
