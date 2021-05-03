@@ -32,7 +32,7 @@ function ColorModeSwitch() {
         id="color-mode-select"
         size="md"
         mx={2}
-        colorScheme=""
+        colorScheme="blue"
         onChange={toggleColorMode}
         isChecked={userColorMode}
       />
