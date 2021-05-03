@@ -53,8 +53,9 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
                 _hover={{ textDecoration: "none", color: brand }}
                 isExternal
                 href={social.url}
+                p={1}
               >
-                <Icon as={social.icon} w={8} h={8} />
+                <Icon id={social.name} as={social.icon} w={8} h={8} />
               </Link>
             </Tooltip>
           );
