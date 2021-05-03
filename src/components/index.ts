@@ -1,6 +1,8 @@
 import ColorModeSwitch from "./cells/colorModeSwitch";
 import Heading from "./cells/heading";
 import Image from "./cells/image";
+import LinkedInBadge from "./cells/linkedinBadge";
+import { Logo, LogoNoText } from "./cells/logo";
 import Footer from "./tissues/footer";
 import Layout from "./organs/layout";
 import Nav from "./tissues/nav";
@@ -15,11 +17,13 @@ export {
   Card,
   ColorModeSwitch,
   Divider,
-  Footer,
   Heading,
   Image,
-  Layout,
-  Nav,
-  Seo,
-  Social,
+  LinkedInBadge,
 };
+
+export { Logo, LogoNoText };
+
+export { Layout };
+
+export { Footer, Nav, Seo, Social };
