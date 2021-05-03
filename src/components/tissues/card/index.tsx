@@ -14,10 +14,10 @@ import Image from "../../cells/image";
 import Moment from "react-moment";
 
 const Card = ({ article, ...rest }) => {
-  const color = useColorModeValue("gray.700", "gray.100");
+  const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
   const bg = useColorModeValue("gray.200", "gray.800");
-  const skeletonEndColor = useColorModeValue("gray.100", "gray.700");
+  const skeletonEndColor = useColorModeValue("gray.50", "gray.700");
 
   const [loading, setLoading] = useState(true);
 

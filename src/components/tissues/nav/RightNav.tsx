@@ -5,7 +5,7 @@ import NextLink from "next/link";
 import { RightNavProps } from "./Nav";
 
 function RightNav({ categories, mobileNavDisclosure }: RightNavProps) {
-  const color = useColorModeValue("gray.700", "gray.100");
+  const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
   return (
     <Stack isInline spacing={6} align="center">

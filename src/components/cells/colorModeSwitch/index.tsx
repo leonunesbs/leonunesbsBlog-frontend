@@ -10,7 +10,7 @@ import {
 import { FiMoon, FiSun } from "react-icons/fi";
 
 function ColorModeSwitch() {
-  const color = useColorModeValue("gray.700", "gray.100");
+  const color = useColorModeValue("gray.700", "gray.50");
 
   const [userColorMode, setUserColorMode] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();

@@ -17,7 +17,7 @@ import {
 import { SocialProps } from "./Social";
 
 function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
-  const color = useColorModeValue("gray.700", "gray.100");
+  const color = useColorModeValue("gray.700", "gray.50");
   const colorInverted = useColorModeValue("gray.200", "gray.800");
   const bg = useColorModeValue("gray.800", "gray.200");
   const brand = useColorModeValue("brand.500", "brand.300");
