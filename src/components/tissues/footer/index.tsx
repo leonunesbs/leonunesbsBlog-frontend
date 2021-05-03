@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Link, useColorModeValue } from "@chakra-ui/react";
 
 import NextLink from "next/link";
 import { Divider, Social } from "../..";
@@ -19,12 +19,12 @@ function Footer({ categories, homepage }) {
       align="center"
       justify="center"
     >
-      <NextLink as="/" href="/">
-        <a>
-          <Flex boxSize={["80px", "100px"]} minW="80px">
+      <NextLink as="/" href="/" passHref>
+        <Link>
+          <Flex minW="80px" align="center" justify="center">
             <LogoNoText />
           </Flex>
-        </a>
+        </Link>
       </NextLink>
       <Divider my={4} maxW="50%" />
       <Social homepage={homepage} />

@@ -1,6 +1,6 @@
 import { useColorModeValue, useTheme } from "@chakra-ui/react";
 
-function Logo() {
+const Logo = () => {
   const themeComponent = useTheme();
   const bg = useColorModeValue(
     themeComponent.colors.gray[800],
@@ -84,6 +84,6 @@ function Logo() {
       </g>
     </svg>
   );
-}
+};
 
 export default Logo;

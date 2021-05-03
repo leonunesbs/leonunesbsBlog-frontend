@@ -1,6 +1,6 @@
 import { useColorModeValue, useTheme } from "@chakra-ui/react";
 
-function LogoNoText() {
+const LogoNoText = () => {
   const themeComponent = useTheme();
   const bg = useColorModeValue(
     themeComponent.colors.gray[800],
@@ -26,6 +26,6 @@ function LogoNoText() {
       </g>
     </svg>
   );
-}
+};
 
 export default LogoNoText;
