@@ -3,8 +3,8 @@ import { Icon, useColorModeValue, useTheme } from "@chakra-ui/react";
 const Logo = () => {
   const themeComponent = useTheme();
   const bg = useColorModeValue(
-    themeComponent.colors.gray[800],
-    themeComponent.colors.gray[200]
+    themeComponent.colors.gray[700],
+    themeComponent.colors.gray[50]
   );
   const brand = useColorModeValue(
     themeComponent.colors.brand[500],

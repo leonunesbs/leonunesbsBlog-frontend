@@ -1,9 +1,11 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import { fetchAPI } from "../../../libs";
-import { Articles, Heading, Layout, Seo } from "../../components";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
+import { Seo } from "../../components/cells";
+import { Layout } from "../../components/organs";
+import { Articles } from "../../components/tissues";
 
 const Category = ({
   category: initialCategory,

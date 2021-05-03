@@ -1,14 +1,15 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { Seo, Layout, Image, Heading } from "../../components";
 import { getStrapiMedia, fetchAPI } from "../../../libs";
 import { Divider, Flex, Stack, Text } from "@chakra-ui/layout";
-import { useColorModeValue } from "@chakra-ui/react";
+import { Heading, useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { ArticlePageProps } from "../../types/ArticlePage";
+import { Seo, Image } from "../../components/cells";
+import { Layout } from "../../components/organs";
 
 const Article = ({
   article: initialArticle,
