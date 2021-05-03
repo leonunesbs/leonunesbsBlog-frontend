@@ -21,7 +21,7 @@ function Footer({ categories, homepage }) {
     >
       <NextLink as="/" href="/" passHref>
         <Link>
-          <Flex minW="80px" align="center" justify="center">
+          <Flex minW="85px" minH="85px" align="center" justify="center">
             <LogoNoText />
           </Flex>
         </Link>

@@ -9,7 +9,7 @@ function LeftNav({ ...rest }: LeftNavProps) {
     <Flex align="center">
       <NextLink as="/" href="/" passHref>
         <Link>
-          <Flex minW="80px" align="center" justify="center">
+          <Flex minW="85px" minH="85px" align="center" justify="center">
             <Logo />
           </Flex>
         </Link>
