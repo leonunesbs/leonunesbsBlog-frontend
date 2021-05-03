@@ -85,13 +85,14 @@ const Article = ({
               <Image
                 image={article.author.picture}
                 position="static"
+                minH="0px"
                 borderRadius="full"
                 boxSize="30px"
               />
             )}
           </Flex>
           <Flex flexDir="column">
-            <Text>By {article.author?.name}</Text>
+            <Text>{article.author?.name}</Text>
             <Text fontWeight="thin" fontSize="sm">
               <Moment format="D MMM YYYY" locale="pt-br">
                 {article.publishedAt}
