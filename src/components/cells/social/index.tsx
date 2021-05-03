@@ -61,18 +61,16 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
           );
         })}
       </Stack>
-      <Tooltip hasArrow label="meu portfolio" bg={bg} color={colorInverted}>
-        <Link
-          isExternal
-          href="https://leonunesbs.vercel.app"
-          textAlign="center"
-          color={color}
-          fontSize="sm"
-          _hover={{ textDecoration: "none", color: brand }}
-        >
-          leonunesbs.com.br
-        </Link>
-      </Tooltip>
+      <Link
+        isExternal
+        href="https://leonunesbs.com.br"
+        textAlign="center"
+        color={color}
+        fontSize="sm"
+        _hover={{ textDecoration: "none", color: brand }}
+      >
+        leonunesbs.com.br
+      </Link>
     </>
   );
 }
