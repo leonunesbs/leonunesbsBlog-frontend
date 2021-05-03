@@ -31,8 +31,8 @@ function ColorModeSwitch() {
       <Switch
         id="color-mode-select"
         size="md"
-        color={color}
         mx={2}
+        colorScheme=""
         onChange={toggleColorMode}
         isChecked={userColorMode}
       />
