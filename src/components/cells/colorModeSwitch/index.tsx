@@ -17,9 +17,9 @@ function ColorModeSwitch() {
   // Checks colorMode and sets Switch value
   useEffect(() => {
     if (colorMode === "light") {
-      setUserColorMode(true);
-    } else {
       setUserColorMode(false);
+    } else {
+      setUserColorMode(true);
     }
   }, [colorMode]);
   return (
@@ -27,7 +27,7 @@ function ColorModeSwitch() {
       <FormLabel htmlFor="color-mode-select" mb="0" display="none">
         Color mode switch
       </FormLabel>
-      <Icon as={FiMoon} w={4} h={4} color={color} />
+      <Icon as={FiSun} w={4} h={4} color={color} />
       <Switch
         id="color-mode-select"
         size="md"
@@ -36,7 +36,7 @@ function ColorModeSwitch() {
         onChange={toggleColorMode}
         isChecked={userColorMode}
       />
-      <Icon as={FiSun} w={4} h={4} color={color} />
+      <Icon as={FiMoon} w={4} h={4} color={color} />
     </FormControl>
   );
 }
