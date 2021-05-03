@@ -7,13 +7,13 @@ import NextLink from "next/link";
 function LeftNav({ ...rest }: LeftNavProps) {
   return (
     <Flex align="center">
-      {/* <NextLink as="/" href="/" passHref>
-        <Link> */}
-      <Flex minW="85px" minH="85px" align="center" justify="center">
-        <Logo />
-      </Flex>
-      {/* </Link>
-      </NextLink> */}
+      <NextLink as="/" href="/" passHref>
+        <Link>
+          <Flex boxSize={["65px", "100px"]} align="center" justify="center">
+            <Logo />
+          </Flex>
+        </Link>
+      </NextLink>
     </Flex>
   );
 }
