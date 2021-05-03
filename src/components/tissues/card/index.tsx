@@ -2,7 +2,7 @@ import {
   Flex,
   Icon,
   Link,
-  Skeleton,
+  // Skeleton,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -17,28 +17,28 @@ const Card = ({ article, ...rest }) => {
   const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
   const bg = useColorModeValue("gray.200", "gray.800");
-  const skeletonEndColor = useColorModeValue("gray.50", "gray.700");
+  // const skeletonEndColor = useColorModeValue("gray.50", "gray.700");
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   return (
     <Flex flexDir="column" minW="180px" p={1} {...rest}>
       <NextLink as={`/article/${article.slug}`} href="/article/[slug]" passHref>
         <Link color={color} _hover={{ textDecoration: "none", color: brand }}>
           <Flex flexDir="column" _hover={{ bgColor: bg }}>
-            <Skeleton
+            {/* <Skeleton
               isLoaded={!loading}
               minH={loading ? "300px" : "0px"}
               startColor={brand}
               endColor={skeletonEndColor}
-            >
-              <Image
-                image={article.image.formats.medium}
-                objectFit="cover"
-                w="100%"
-                onLoad={() => setLoading(false)}
-              />
-            </Skeleton>
+            > */}
+            <Image
+              image={article.image.formats.medium}
+              objectFit="cover"
+              w="100%"
+              // onLoad={() => setLoading(false)}
+            />
+            {/* </Skeleton> */}
             <Flex p={[4, 10]}>
               <Icon as={BsArrowReturnRight} w={6} h={4} mx={1} />
               <Flex flexDir="column" flexGrow={1}>
