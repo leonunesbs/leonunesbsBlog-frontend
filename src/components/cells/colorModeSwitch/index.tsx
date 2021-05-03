@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
+  FormControl,
+  FormLabel,
   Icon,
   Switch,
   useColorMode,
@@ -21,7 +23,10 @@ function ColorModeSwitch() {
     }
   }, [colorMode]);
   return (
-    <>
+    <FormControl display="flex" alignItems="center" p={1} mr={2}>
+      <FormLabel htmlFor="color-mode-select" mb="0" display="none">
+        Color mode switch
+      </FormLabel>
       <Icon as={FiMoon} w={4} h={4} color={color} />
       <Switch
         id="color-mode-select"
@@ -32,7 +37,7 @@ function ColorModeSwitch() {
         isChecked={userColorMode}
       />
       <Icon as={FiSun} w={4} h={4} color={color} />
-    </>
+    </FormControl>
   );
 }
 
