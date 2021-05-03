@@ -70,7 +70,7 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
           fontSize="sm"
           _hover={{ textDecoration: "none", color: brand }}
         >
-          leonunesbs.vercel.app
+          leonunesbs.com.br
         </Link>
       </Tooltip>
     </>

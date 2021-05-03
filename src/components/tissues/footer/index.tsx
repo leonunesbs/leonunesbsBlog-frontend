@@ -2,11 +2,9 @@ import React from "react";
 import { Flex, Link, Stack, useColorModeValue } from "@chakra-ui/react";
 
 import NextLink from "next/link";
-import { Divider, Social } from "../..";
-import { LogoNoText } from "../../../components";
-import { LinkedInBadge } from "../../../components";
+import { Divider, LogoNoText, Social } from "../../cells";
 
-function Footer({ categories, homepage }) {
+function Footer({ homepage }) {
   const bg = useColorModeValue("gray.200", "gray.800");
 
   return (
@@ -26,9 +24,6 @@ function Footer({ categories, homepage }) {
           </Flex>
         </Link>
       </NextLink>
-      <Flex>
-        <LinkedInBadge />
-      </Flex>
       <Divider my={4} maxW="50%" />
       <Social homepage={homepage} />
     </Stack>

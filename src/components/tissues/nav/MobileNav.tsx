@@ -10,8 +10,8 @@ import {
 import React from "react";
 import NextLink from "next/link";
 import { BsArrowReturnRight } from "react-icons/bs";
-import { Social } from "../..";
 import { MobileNavProps } from "./Nav";
+import { Social } from "../../cells";
 
 function MobileNav({
   mobileNavDisclosure,

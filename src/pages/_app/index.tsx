@@ -15,10 +15,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         {/* LinkedIn Badge */}
-        <script
+        {/* <script
           type="text/javascript"
           src="https://platform.linkedin.com/badges/js/profile.js"
-        />
+        /> */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           rel="stylesheet"
