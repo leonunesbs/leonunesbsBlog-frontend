@@ -19,7 +19,7 @@ function MobileNav({
   homepage,
   ...rest
 }: MobileNavProps) {
-  const color = useColorModeValue("gray.700", "gray.100");
+  const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
 
   return (

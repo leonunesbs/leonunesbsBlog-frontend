@@ -16,8 +16,8 @@ const Article = ({
   homepage,
 }: ArticlePageProps) => {
   const router = useRouter();
-  const color = useColorModeValue("gray.700", "gray.100");
-  const bg = useColorModeValue("gray.100", "gray.700");
+  const color = useColorModeValue("gray.700", "gray.50");
+  const bg = useColorModeValue("gray.50", "gray.700");
 
   const { data: categories } = useFetch("/categories", {
     initialData: initialCategories,
