@@ -1,8 +1,19 @@
-import { useColorMode } from "@chakra-ui/color-mode";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 function DynamicFavicon() {
-  const { colorMode } = useColorMode();
+  const [colorMode, setColorMode] = useState("light");
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setColorMode("dark");
+    } else {
+      setColorMode("light");
+    }
+  }, []);
+
   return (
     <Head>
       {/* START favicon + PWA */}
