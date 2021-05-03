@@ -13,7 +13,7 @@ const Layout = ({ children, categories, homepage }: LayoutProps) => {
       <Flex flexDir="column" w="100%" h="100%">
         {children}
       </Flex>
-      <Footer categories={categories} />
+      <Footer categories={categories} homepage={homepage} />
     </Flex>
   );
 };

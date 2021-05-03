@@ -8,12 +8,13 @@ import {
   useColorModeValue,
   useDisclosure,
   useOutsideClick,
+  Image as ChakraImage,
 } from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
 import { BsArrowReturnRight } from "react-icons/bs";
 import NextLink from "next/link";
 import { dynamicSort } from "../../../../libs";
-import { ColorModeSwitch, Divider, Social } from "../..";
+import { ColorModeSwitch, Divider, Social } from "../../../components";
 import { NavProps } from "./Nav";
 
 const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
@@ -25,6 +26,12 @@ const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
   const bg = useColorModeValue("gray.200", "gray.800");
   const color = useColorModeValue("gray.700", "gray.100");
   const brand = useColorModeValue("brand.500", "brand.300");
+
+  const logoSrc = useColorModeValue(
+    "/static/logo-light.svg",
+    "/static/logo-dark.svg"
+  );
+  const altSrc = useColorModeValue("logo-light", "logo-dark");
 
   // Ordering categories
   useEffect(() => {
@@ -47,14 +54,16 @@ const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
     >
       <Flex as="nav" flexGrow={1} justify="space-between">
         <Flex align="center">
-          <NextLink as="/" href="/" passHref>
-            <Link
-              fontWeight="bold"
-              color={color}
-              _hover={{ textDecoration: "none", color: brand }}
-            >
-              leonunesbsBlog
-            </Link>
+          <NextLink as="/" href="/">
+            <a>
+              <ChakraImage
+                objectFit="contain"
+                boxSize={["80px", "100px"]}
+                minW="80px"
+                src={logoSrc}
+                alt={altSrc}
+              />
+            </a>
           </NextLink>
         </Flex>
         <Stack isInline spacing={6} align="center">
