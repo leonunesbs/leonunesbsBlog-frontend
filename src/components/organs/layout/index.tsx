@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex } from "@chakra-ui/layout";
 import { useColorModeValue } from "@chakra-ui/react";
-import { Footer, Nav } from "../..";
 import { LayoutProps } from "./Layout";
 import DynamicFavicon from "../../cells/dynamicFavicon";
+import { Footer, Nav } from "../../tissues";
 
 const Layout = ({ children, categories, homepage }: LayoutProps) => {
   const bg = useColorModeValue("gray.50", "gray.700");
@@ -16,7 +16,7 @@ const Layout = ({ children, categories, homepage }: LayoutProps) => {
         <Flex flexDir="column" w="100%" h="100%">
           {children}
         </Flex>
-        <Footer categories={categories} homepage={homepage} />
+        <Footer homepage={homepage} />
       </Flex>
     </>
   );

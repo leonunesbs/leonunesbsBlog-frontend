@@ -1,8 +1,9 @@
 import { Flex, Icon, Link, Stack, useColorModeValue } from "@chakra-ui/react";
 import { IoMdMenu } from "react-icons/io";
-import { ColorModeSwitch } from "../..";
 import NextLink from "next/link";
 import { RightNavProps } from "./Nav";
+import React from "react";
+import { ColorModeSwitch } from "../../cells";
 
 function RightNav({ categories, mobileNavDisclosure }: RightNavProps) {
   const color = useColorModeValue("gray.700", "gray.50");

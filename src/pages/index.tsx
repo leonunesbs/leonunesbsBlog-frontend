@@ -1,8 +1,10 @@
 import React from "react";
 import { fetchAPI } from "../../libs";
-import { Articles, Heading, Layout, Seo } from "../components";
 import { Flex } from "@chakra-ui/react";
 import { HomeProps } from "../types/Home";
+import { Layout } from "../components/organs";
+import { Heading, Seo } from "../components/cells";
+import { Articles } from "../components/tissues";
 
 const Home = ({ articles, categories, homepage }: HomeProps) => {
   return (

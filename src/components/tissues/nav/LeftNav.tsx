@@ -1,6 +1,6 @@
 import { Flex, Link } from "@chakra-ui/react";
 import React from "react";
-import { Logo } from "../../cells/logo";
+import { Logo } from "../../cells";
 import { LeftNavProps } from "./Nav";
 import NextLink from "next/link";
 

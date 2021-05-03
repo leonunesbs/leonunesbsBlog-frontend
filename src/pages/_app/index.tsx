@@ -3,7 +3,7 @@ import Head from "next/head";
 import { createContext } from "react";
 import { fetchAPI } from "../../../libs/api";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../../styles/theme";
+import themeBlue from "../../styles/themeBlue";
 
 // Store Strapi Global object in context
 export const GlobalContext: any = createContext({});
@@ -14,6 +14,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        {/* LinkedIn Badge */}
+        {/* <script
+          type="text/javascript"
+          src="https://platform.linkedin.com/badges/js/profile.js"
+        /> */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           rel="stylesheet"
@@ -41,7 +46,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           crossOrigin="anonymous"
         />
       </Head>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={themeBlue}>
         <GlobalContext.Provider value={global}>
           <Component {...pageProps} />
         </GlobalContext.Provider>

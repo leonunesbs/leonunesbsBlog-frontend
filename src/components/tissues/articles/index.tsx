@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { dynamicSort } from "../../../../libs";
-import Card from "../card";
+import { Card } from "../../tissues";
 import { ArticlesComponentProps } from "./Article";
 
 const Articles = ({ articles: initialArticles }: ArticlesComponentProps) => {
