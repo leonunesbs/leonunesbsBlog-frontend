@@ -12,11 +12,6 @@ function LinkedinBadge() {
 
   return (
     <>
-      {/* LinkedIn Badge */}
-      <script
-        type="text/javascript"
-        src="https://platform.linkedin.com/badges/js/profile.js"
-      />
       <Flex
         d={colorMode !== "dark" && "none"}
         className="LI-profile-badge"
