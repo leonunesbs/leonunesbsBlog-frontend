@@ -6,13 +6,15 @@ import { ArticlesComponentProps } from "./Article";
 
 const Articles = ({ articles: initialArticles }: ArticlesComponentProps) => {
   const [articles, setArticles] = useState(initialArticles);
-  useEffect(() => {
-    setArticles(articles.sort(dynamicSort("publishedAt")));
-  }, [articles]);
+  const [leftArticles, setLeftArticles] = useState([]);
+  const [rightArticles, setRightArticles] = useState([]);
 
-  const leftArticlesCount = Math.ceil(articles.length / 5);
-  const leftArticles = articles.slice(0, leftArticlesCount);
-  const rightArticles = articles.slice(leftArticlesCount, articles.length);
+  useEffect(() => {
+    const leftArticlesCount = Math.ceil(articles.length / 5);
+    setArticles(articles.sort(dynamicSort("-publishedAt")));
+    setLeftArticles(articles.slice(0, leftArticlesCount));
+    setRightArticles(articles.slice(leftArticlesCount, articles.length));
+  }, [articles]);
 
   return (
     <Flex flexDir="row" flexWrap="wrap" w="100%">
