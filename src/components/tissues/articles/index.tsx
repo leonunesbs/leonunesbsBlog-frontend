@@ -7,7 +7,7 @@ import { ArticlesComponentProps } from "./Article";
 const Articles = ({ articles: initialArticles }: ArticlesComponentProps) => {
   const [articles, setArticles] = useState(initialArticles);
   useEffect(() => {
-    setArticles(articles.sort(dynamicSort("-publishedAt")));
+    setArticles(articles.sort(dynamicSort("publishedAt")));
   }, [articles]);
 
   const leftArticlesCount = Math.ceil(articles.length / 5);
