@@ -57,6 +57,7 @@ const Article = ({
         align="center"
         justify="center"
         w="100%"
+        minH="800px"
         textColor={color}
         py={48}
       >
