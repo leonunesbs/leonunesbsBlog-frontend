@@ -17,7 +17,7 @@ const Articles = ({ articles: initialArticles }: ArticlesComponentProps) => {
   }, [articles]);
 
   return (
-    <Flex flexDir="row" flexWrap="wrap" w="100%">
+    <Flex flexWrap="wrap" w="100%">
       <Flex
         flexDir="column"
         w={rightArticles.length > 0 ? ["100%", "50%"] : "100%"}

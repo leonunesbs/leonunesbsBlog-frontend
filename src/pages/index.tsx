@@ -14,7 +14,7 @@ const Home = ({ articles, categories, homepage }: HomeProps) => {
         metaTitle={homepage.seo.metaTitle}
         shareImage={homepage.seo.shareImage}
       />
-      <Flex flexDir="column" w="100%" my={14} px={[10, 16, 24, 40]}>
+      <Flex flexDir="column" w="100%" my={14} px={[4, 12, 20, 32]}>
         <Heading text={homepage.hero.title} />
         <Articles articles={articles} />
       </Flex>

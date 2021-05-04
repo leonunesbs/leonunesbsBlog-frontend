@@ -6,6 +6,8 @@ import { useFetch } from "../../../hooks";
 import { Seo } from "../../components/cells";
 import { Layout } from "../../components/organs";
 import { Articles } from "../../components/tissues";
+import { ArticleProps, CategoryProps, HomepageProps } from "../../types/Types";
+import { SeoProps } from "../../components/cells/seo/Seo";
 
 const Category = ({
   category: initialCategory,
@@ -26,24 +28,26 @@ const Category = ({
     return <p>Carregando...</p>;
   }
 
-  const seo = {
+  const seo: SeoProps = {
     metaTitle: category.name,
     metaDescription: `All ${category.name} articles`,
   };
 
-  const articles = category.articles.map((art) => ({
-    ...art,
-    category: {
-      id: art.category,
-      slug: router.query.slug,
-      name: router.query.slug,
-    },
-  }));
+  const articles: ArticleProps[] = category.articles.map(
+    (art: ArticleProps) => ({
+      ...art,
+      category: {
+        id: art.category,
+        slug: router.query.slug,
+        name: router.query.slug,
+      },
+    })
+  );
 
   return (
     <Layout categories={categories} homepage={homepage}>
       <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
-      <Flex flexDir="column" mt={14} px={[10, 40]}>
+      <Flex flexDir="column" my={14} px={[4, 12, 20, 32]}>
         <Heading text={category.name} />
         <Articles articles={articles} />
       </Flex>
@@ -52,7 +56,7 @@ const Category = ({
 };
 
 export async function getStaticPaths() {
-  const categories = await fetchAPI("/categories");
+  const categories: CategoryProps[] = await fetchAPI("/categories");
 
   return {
     paths: categories.map((category) => ({
@@ -65,9 +69,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const category = (await fetchAPI(`/categories?slug=${params.slug}`))[0];
-  const categories = await fetchAPI("/categories");
-  const homepage = await fetchAPI("/homepage");
+  const category: CategoryProps = (
+    await fetchAPI(`/categories?slug=${params.slug}`)
+  )[0];
+  const categories: CategoryProps[] = await fetchAPI("/categories");
+  const homepage: HomepageProps = await fetchAPI("/homepage");
 
   return {
     props: { category, categories, homepage },
