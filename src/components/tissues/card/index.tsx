@@ -41,8 +41,14 @@ const Card = ({ article, ...rest }) => {
                 <Text fontSize="xl" lineHeight={1.4} letterSpacing={0.5}>
                   {article.title}
                 </Text>
-                <Flex justify="flex-end" w="100%">
-                  <Text fontWeight="light" fontSize="sm" color={color}>
+                <Flex>
+                  <Text
+                    fontWeight="light"
+                    fontSize="sm"
+                    color={color}
+                    w="100%"
+                    textAlign="right"
+                  >
                     <Moment format="D MMM YYYY" locale="pt-br">
                       {article.publishedAt}
                     </Moment>
