@@ -11,7 +11,7 @@ function LeftNav({ mobileNavDisclosure, ...rest }: LeftNavProps) {
         <Link>
           {mobileNavDisclosure.isOpen ? (
             <Flex
-              boxSize={["65px", "100px"]}
+              boxSize="100px"
               align="center"
               justify="center"
               transition="width 0.5s, height 0.5s, transform 0.8s"
