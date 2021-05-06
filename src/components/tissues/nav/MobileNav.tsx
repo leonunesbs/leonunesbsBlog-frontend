@@ -24,7 +24,7 @@ function MobileNav({
 
   return (
     <Collapse in={mobileNavDisclosure.isOpen} animateOpacity unmountOnExit>
-      <Stack p={4} mt="4" rounded="md" display={["flex", "flex", "none"]}>
+      <Stack p={4} mt="4">
         {categories.map((category) => {
           return (
             <Flex key={category.id}>

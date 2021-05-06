@@ -77,7 +77,7 @@ const Article = ({
       </Flex>
       <Flex
         flexDir="column"
-        px={[2, 8, 20, 32]}
+        px={[4, 8, 20, 32]}
         my={10}
         w="100vw"
         textColor={color}

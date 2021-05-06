@@ -10,7 +10,9 @@ interface UseDisclosureExtendedProps extends UseDisclosureProps {
   onToggle: () => void;
 }
 
-export interface LeftNavProps {}
+export interface LeftNavProps {
+  mobileNavDisclosure: UseDisclosureExtendedProps
+}
 export interface RightNavProps {
   categories: CategoryProps[];
   mobileNavDisclosure: UseDisclosureExtendedProps;
