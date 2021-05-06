@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
+  Button,
+  Fade,
   Flex,
   FormControl,
   FormLabel,
@@ -12,7 +14,10 @@ import { FiMoon, FiSun } from "react-icons/fi";
 
 function ColorModeSwitch() {
   const color = useColorModeValue("gray.700", "gray.50");
-
+  const smallButtonColor = useColorModeValue(
+    "rgba(0,0,0,0.1)",
+    "rgba(255,255,255,0.1)"
+  );
   const [userColorMode, setUserColorMode] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
   // Checks colorMode and sets Switch value
@@ -23,17 +28,24 @@ function ColorModeSwitch() {
       setUserColorMode(true);
     }
   }, [colorMode]);
+
+  const handleClick = () => {
+    toggleColorMode();
+  };
+
   return (
     <>
       <Flex display={["flex", "none"]}>
-        <Icon
-          as={colorMode === "light" ? FiMoon : FiSun}
-          w={4}
-          h={4}
+        <Button
+          p={0}
+          bgColor="transparent"
+          _active={{ bgColor: smallButtonColor }}
+          _focus={{}}
           color={color}
-          onClick={toggleColorMode}
-          cursor="pointer"
-        />
+          onClick={handleClick}
+        >
+          <Icon as={colorMode === "light" ? FiMoon : FiSun} w={4} h={4} />
+        </Button>
       </Flex>
       <Flex display={["none", "flex"]}>
         <FormControl display="flex" alignItems="center" p={1}>
