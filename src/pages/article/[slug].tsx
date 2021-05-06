@@ -75,7 +75,13 @@ const Article = ({
           <Heading text={article.title} />
         </Flex>
       </Flex>
-      <Flex flexDir="column" px={[10, 40]} my={10} w="100vw" textColor={color}>
+      <Flex
+        flexDir="column"
+        px={[2, 8, 20, 32]}
+        my={10}
+        w="100vw"
+        textColor={color}
+      >
         <ReactMarkdown
           source={article.content}
           escapeHtml={false}

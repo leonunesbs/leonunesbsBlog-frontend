@@ -32,7 +32,7 @@ const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
   return (
     <Flex
       ref={navRef}
-      px={6}
+      px={[2, 8, 20, 32]}
       py={4}
       boxShadow="md"
       bgColor={bg}

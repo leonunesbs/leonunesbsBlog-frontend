@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Flex,
   FormControl,
   FormLabel,
   Icon,
@@ -23,21 +24,35 @@ function ColorModeSwitch() {
     }
   }, [colorMode]);
   return (
-    <FormControl display="flex" alignItems="center" p={1} mr={2}>
-      <FormLabel htmlFor="color-mode-select" mb="0" display="none">
-        Color mode switch
-      </FormLabel>
-      <Icon as={FiSun} w={4} h={4} color={color} />
-      <Switch
-        id="color-mode-select"
-        size="md"
-        mx={2}
-        colorScheme="blue"
-        onChange={toggleColorMode}
-        isChecked={userColorMode}
-      />
-      <Icon as={FiMoon} w={4} h={4} color={color} />
-    </FormControl>
+    <>
+      <Flex display={["flex", "none"]}>
+        <Icon
+          as={colorMode === "light" ? FiMoon : FiSun}
+          w={4}
+          h={4}
+          color={color}
+          onClick={toggleColorMode}
+          cursor="pointer"
+        />
+      </Flex>
+      <Flex display={["none", "flex"]}>
+        <FormControl display="flex" alignItems="center" p={1}>
+          <FormLabel htmlFor="color-mode-select" mb="0" display="none">
+            Color mode switch
+          </FormLabel>
+          <Icon as={FiSun} w={4} h={4} color={color} />
+          <Switch
+            id="color-mode-select"
+            size="md"
+            mx={2}
+            colorScheme="blue"
+            onChange={toggleColorMode}
+            isChecked={userColorMode}
+          />
+          <Icon as={FiMoon} w={4} h={4} color={color} />
+        </FormControl>
+      </Flex>
+    </>
   );
 }
 

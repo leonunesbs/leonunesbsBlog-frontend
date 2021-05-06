@@ -2,9 +2,11 @@ import React from "react";
 import {
   Icon,
   Link,
-  Stack,
+  Text,
   Tooltip,
   useColorModeValue,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import {
   AiFillFacebook,
@@ -14,6 +16,7 @@ import {
   AiFillTwitterSquare,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
+import { FaTwitch } from "react-icons/fa";
 import { SocialProps } from "./Social";
 
 function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
@@ -29,6 +32,7 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
     github: AiFillGithub,
     linkedin: AiFillLinkedin,
     whatsapp: AiOutlineWhatsApp,
+    twitch: FaTwitch,
   };
 
   const socials = initialHomepage.socials.map((social) => ({
@@ -38,29 +42,30 @@ function Social({ homepage: initialHomepage, ...rest }: SocialProps) {
 
   return (
     <>
-      <Stack isInline spacing={4} justify="center" {...rest}>
+      <Wrap spacing={4} justify="center" {...rest}>
         {socials.map((social) => {
           return (
-            <Tooltip
-              key={social.id}
-              hasArrow
-              label={social.name}
-              bg={bg}
-              color={colorInverted}
-            >
-              <Link
-                color={color}
-                _hover={{ textDecoration: "none", color: brand }}
-                isExternal
-                href={social.url}
-                p={1}
+            <WrapItem key={social.id}>
+              <Tooltip
+                hasArrow
+                label={social.name}
+                bg={bg}
+                color={colorInverted}
               >
-                <Icon id={social.name} as={social.icon} w={8} h={8} />
-              </Link>
-            </Tooltip>
+                <Link
+                  color={color}
+                  _hover={{ textDecoration: "none", color: brand }}
+                  isExternal
+                  href={social.url}
+                  p={1}
+                >
+                  <Icon id={social.name} as={social.icon} w={8} h={8} />
+                </Link>
+              </Tooltip>
+            </WrapItem>
           );
         })}
-      </Stack>
+      </Wrap>
       <Link
         isExternal
         href="https://leonunesbs.com.br"

@@ -1,6 +1,6 @@
 import { Icon, useColorModeValue, useTheme } from "@chakra-ui/react";
 
-const LogoNoText = () => {
+const LogoNoText = ({ ...rest }) => {
   const themeComponent = useTheme();
   const bg = useColorModeValue(
     themeComponent.colors.gray[700],
@@ -11,7 +11,7 @@ const LogoNoText = () => {
     themeComponent.colors.brand[300]
   );
   return (
-    <Icon viewBox="0 0 71.53 71.31" w="100%" h="100%">
+    <Icon viewBox="0 0 71.53 71.31" w="100%" h="100%" {...rest}>
       <g id="logo-light-notext">
         <path
           id="L"
