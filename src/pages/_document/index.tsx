@@ -17,7 +17,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head />
+        <Head>
+          <link rel="canonical" href="https://mytree.leonunesbs.com.br" />
+        </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
