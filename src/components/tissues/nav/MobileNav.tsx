@@ -1,9 +1,11 @@
 import {
+  Button,
   Collapse,
   Divider,
   Flex,
   Icon,
-  Link,
+  LinkBox,
+  LinkOverlay,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -12,6 +14,7 @@ import NextLink from "next/link";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { MobileNavProps } from "./Nav";
 import { Social } from "../../cells";
+import { useRouter } from "next/router";
 
 function MobileNav({
   mobileNavDisclosure,
@@ -21,26 +24,34 @@ function MobileNav({
 }: MobileNavProps) {
   const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
+  const router = useRouter();
 
   return (
     <Collapse in={mobileNavDisclosure.isOpen} animateOpacity unmountOnExit>
       <Stack p={4} mt="4">
         {categories.map((category) => {
           return (
-            <Flex key={category.id}>
+            <Flex key={category.id} align="center">
               <Icon as={BsArrowReturnRight} w={6} h={4} mx={1} color={color} />
-              <NextLink
-                as={`/category/${category.slug}`}
-                href="/category/[slug]"
-                passHref
-              >
-                <Link
+              <LinkBox>
+                <Button
+                  p={0}
+                  isActive={router.query.slug === category.name}
+                  bgColor="transparent"
                   color={color}
-                  _hover={{ textDecoration: "none", color: brand }}
+                  _focus={{}}
+                  _hover={{ color: brand }}
+                  _active={{ color: brand }}
                 >
-                  {category.name.toUpperCase()}
-                </Link>
-              </NextLink>
+                  <NextLink
+                    as={`/category/${category.slug}`}
+                    href="/category/[slug]"
+                    passHref
+                  >
+                    <LinkOverlay>{category.name.toUpperCase()}</LinkOverlay>
+                  </NextLink>
+                </Button>
+              </LinkBox>
             </Flex>
           );
         })}

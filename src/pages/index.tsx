@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchAPI } from "../../libs";
+import { dynamicSort, fetchAPI } from "../../libs";
 import { Flex } from "@chakra-ui/react";
 import { HomeProps } from "../types/Home";
 import { Layout } from "../components/organs";
@@ -24,11 +24,17 @@ const Home = ({ articles, categories, homepage }: HomeProps) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [articles, categories, homepage] = await Promise.all([
+  const [initialArticles, initialCategories, homepage] = await Promise.all([
     fetchAPI("/articles?status=published"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
   ]);
+
+  // Ordering categories
+  const categories = initialCategories.sort(dynamicSort("position"));
+
+  // Ordering articles
+  const articles = initialArticles.sort(dynamicSort("-publishedAt"));
 
   return {
     props: { articles, categories, homepage },

@@ -11,7 +11,7 @@ import RightNav from "./RightNav";
 import LeftNav from "./LeftNav";
 import MobileNav from "./MobileNav";
 
-const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
+const Nav = ({ categories, homepage }: NavProps) => {
   const mobileNavDisclosure = useDisclosure();
 
   // Outside click
@@ -22,12 +22,6 @@ const Nav = ({ categories: initialCategories, homepage }: NavProps) => {
   });
 
   const bg = useColorModeValue("gray.200", "gray.800");
-
-  // Ordering categories
-  const [categories, setCategories] = useState(initialCategories);
-  useEffect(() => {
-    setCategories(categories.sort(dynamicSort("position")));
-  }, [categories]);
 
   return (
     <Flex

@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Heading } from "@chakra-ui/react";
-import { fetchAPI } from "../../../libs";
+import { dynamicSort, fetchAPI } from "../../../libs";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
 import { Seo } from "../../components/cells";
@@ -74,8 +74,11 @@ export async function getStaticProps({ params }) {
   const category: CategoryProps = (
     await fetchAPI(`/categories?slug=${params.slug}`)
   )[0];
-  const categories: CategoryProps[] = await fetchAPI("/categories");
+  const initialCategories: CategoryProps[] = await fetchAPI("/categories");
   const homepage: HomepageProps = await fetchAPI("/homepage");
+
+  // Ordering categories
+  const categories = initialCategories.sort(dynamicSort("position"));
 
   return {
     props: { category, categories, homepage },

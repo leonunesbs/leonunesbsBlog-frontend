@@ -1,7 +1,10 @@
 import {
+  Button,
   Flex,
   Icon,
   Link,
+  LinkBox,
+  LinkOverlay,
   Stack,
   useColorModeValue,
   useTheme,
@@ -12,9 +15,11 @@ import { RightNavProps } from "./Nav";
 import React from "react";
 import { ColorModeSwitch } from "../../cells";
 import { Squash as Hamburger } from "hamburger-react";
+import { useRouter } from "next/router";
 
 function RightNav({ categories, mobileNavDisclosure }: RightNavProps) {
   const theme = useTheme();
+  const router = useRouter();
 
   const color = useColorModeValue("gray.700", "gray.50");
   const brand = useColorModeValue("brand.500", "brand.300");
@@ -35,18 +40,25 @@ function RightNav({ categories, mobileNavDisclosure }: RightNavProps) {
         {categories.map((category) => {
           return (
             <Flex key={category.id} display={["none", "none", "none", "flex"]}>
-              <NextLink
-                as={`/category/${category.slug}`}
-                href="/category/[slug]"
-                passHref
-              >
-                <Link
+              <LinkBox>
+                <Button
+                  p={0}
+                  isActive={router.query.slug === category.name}
+                  bgColor="transparent"
                   color={color}
-                  _hover={{ textDecoration: "none", color: brand }}
+                  _focus={{}}
+                  _hover={{ color: brand }}
+                  _active={{ color: brand }}
                 >
-                  {category.name.toUpperCase()}
-                </Link>
-              </NextLink>
+                  <NextLink
+                    as={`/category/${category.slug}`}
+                    href="/category/[slug]"
+                    passHref
+                  >
+                    <LinkOverlay>{category.name.toUpperCase()}</LinkOverlay>
+                  </NextLink>
+                </Button>
+              </LinkBox>
             </Flex>
           );
         })}

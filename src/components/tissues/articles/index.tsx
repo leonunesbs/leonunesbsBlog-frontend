@@ -4,14 +4,12 @@ import { dynamicSort } from "../../../../libs";
 import { Card } from "../../tissues";
 import { ArticlesComponentProps } from "./Article";
 
-const Articles = ({ articles: initialArticles }: ArticlesComponentProps) => {
-  const [articles, setArticles] = useState(initialArticles);
+const Articles = ({ articles }: ArticlesComponentProps) => {
   const [leftArticles, setLeftArticles] = useState([]);
   const [rightArticles, setRightArticles] = useState([]);
 
   useEffect(() => {
     const leftArticlesCount = Math.ceil(articles.length / 5);
-    setArticles(articles.sort(dynamicSort("-publishedAt")));
     setLeftArticles(articles.slice(0, leftArticlesCount));
     setRightArticles(articles.slice(leftArticlesCount, articles.length));
   }, [articles]);
