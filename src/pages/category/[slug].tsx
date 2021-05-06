@@ -18,10 +18,12 @@ const Category = ({
 
   const { data: categories } = useFetch("/categories", {
     initialData: initialCategories,
+    refreshInterval: 2,
   });
 
   const { data: category } = useFetch(`/categories?slug=${router.query.slug}`, {
     initialData: initialCategory,
+    refreshInterval: 2,
   });
 
   if (router.isFallback) {

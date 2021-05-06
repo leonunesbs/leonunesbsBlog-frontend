@@ -21,14 +21,14 @@ const Article = ({
 
   const { data: categories } = useFetch("/categories", {
     initialData: initialCategories,
-    refreshInterval: 20,
+    refreshInterval: 2,
   });
 
   const { data: article } = useFetch(
     `/articles?slug=${router.query.slug}&status=published`,
     {
       initialData: initialArticle,
-      refreshInterval: 20,
+      refreshInterval: 2,
     }
   );
 
