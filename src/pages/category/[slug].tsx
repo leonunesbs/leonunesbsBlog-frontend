@@ -47,7 +47,7 @@ const Category = ({
   return (
     <Layout categories={categories} homepage={homepage}>
       <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
-      <Flex flexDir="column" my={14} px={[4, 12, 20, 32]}>
+      <Flex flexDir="column" my={14} px={[4, 8, 20, 32]}>
         <Heading text={category.name} />
         <Articles articles={articles} />
       </Flex>
