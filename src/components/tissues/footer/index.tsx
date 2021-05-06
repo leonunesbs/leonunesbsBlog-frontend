@@ -49,6 +49,19 @@ function Footer({ homepage }) {
             </Link>
           </NextLink>
         </WrapItem>
+        <WrapItem>
+          <NextLink
+            href="https://portfolio.leonunesbs.com.br"
+            as="https://port.lnbs.me"
+            passHref
+          >
+            <Link isExternal>
+              <Flex boxSize="65px" align="center" justify="center">
+                <Img src="/portfolio.png" alt="portfolio" />
+              </Flex>
+            </Link>
+          </NextLink>
+        </WrapItem>
       </Wrap>
       <Divider my={4} maxW="50%" />
       <Social homepage={homepage} />
