@@ -1,11 +1,20 @@
 import React from "react";
-import { Flex, Link, Stack, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Img,
+  Link,
+  Stack,
+  useColorModeValue,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 
 import NextLink from "next/link";
-import { Divider, LogoNoText, Social } from "../../cells";
+import { Divider, Logo, Social } from "../../cells";
 
 function Footer({ homepage }) {
   const bg = useColorModeValue("gray.200", "gray.800");
+  const myTreeSrc = useColorModeValue("/myTree-light.png", "/myTree-dark.png");
 
   return (
     <Stack
@@ -15,15 +24,32 @@ function Footer({ homepage }) {
       minH="120px"
       bgColor={bg}
       align="center"
-      justify="center"
+      justif="center"
     >
-      <NextLink as="/" href="/" passHref>
-        <Link>
-          <Flex boxSize={["85px", "100px"]} align="center" justify="center">
-            <LogoNoText />
-          </Flex>
-        </Link>
-      </NextLink>
+      <Wrap justify="center" align="center">
+        <WrapItem>
+          <NextLink as="/" href="/" passHref>
+            <Link>
+              <Flex boxSize="65px" align="center" justify="center">
+                <Logo />
+              </Flex>
+            </Link>
+          </NextLink>
+        </WrapItem>
+        <WrapItem>
+          <NextLink
+            href="https://mytree.leonunesbs.com.br"
+            as="https://lnbs.me"
+            passHref
+          >
+            <Link isExternal>
+              <Flex boxSize="130px" align="center" justify="center">
+                <Img src={myTreeSrc} alt="mytree" />
+              </Flex>
+            </Link>
+          </NextLink>
+        </WrapItem>
+      </Wrap>
       <Divider my={4} maxW="50%" />
       <Social homepage={homepage} />
     </Stack>
