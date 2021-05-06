@@ -40,8 +40,10 @@ function ColorModeSwitch() {
           p={0}
           bgColor="transparent"
           _active={{ bgColor: smallButtonColor }}
+          _hover={{ bgColor: smallButtonColor }}
           _focus={{}}
           color={color}
+          isActive={false}
           onClick={handleClick}
         >
           <Icon as={colorMode === "light" ? FiMoon : FiSun} w={4} h={4} />
