@@ -5,6 +5,9 @@ import { fetchAPI } from "../../../libs/api";
 import { ChakraProvider } from "@chakra-ui/react";
 import themeBlue from "../../styles/themeBlue";
 
+import "@fontsource/jetbrains-mono";
+import "@fontsource/staatliches";
+
 // Store Strapi Global object in context
 export const GlobalContext: any = createContext({});
 
@@ -19,16 +22,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           type="text/javascript"
           src="https://platform.linkedin.com/badges/js/profile.js"
         /> */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Staatliches"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap"
-        />
-
         <link
           rel="preconnect"
           href={

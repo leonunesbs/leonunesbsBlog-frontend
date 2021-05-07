@@ -14,6 +14,8 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/jetbrains-mono": "^4.3.0",
+    "@fontsource/staatliches": "^4.3.0",
     "chakra-ui-markdown-renderer": "^1.1.0",
     "framer-motion": "^4",
     "hamburger-react": "^2.4.0",

@@ -1859,6 +1859,16 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fontsource/jetbrains-mono@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-4.3.0.tgz#fde42ebd091975af9cec5168c97fc7e5c187b75e"
+  integrity sha512-JLA18uXrIJZadVN8D1kT2xalJQ+jkS9ZwlRdCXem+kJrnwvdBLH6DSkT9LX0NCmLHAzvRjt8lbM0q31Ar9dlzA==
+
+"@fontsource/staatliches@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/staatliches/-/staatliches-4.3.0.tgz#c55c2060fe36c1d2de1168be595f5e685abd966d"
+  integrity sha512-o1BCWiUNtR818wUhRnoV2AxrODkYfLo6K8vhXJXkhh6KjlEsvK3laLqciP7Kpv9/fzd2dMHN6wpXHWYZQA93Pw==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"
