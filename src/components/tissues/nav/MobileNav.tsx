@@ -42,6 +42,7 @@ function MobileNav({
                   _focus={{}}
                   _hover={{ color: brand }}
                   _active={{ color: brand }}
+                  onClick={mobileNavDisclosure.onClose}
                 >
                   <NextLink
                     as={`/category/${category.slug}`}
