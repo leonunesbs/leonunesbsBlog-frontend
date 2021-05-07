@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Stack, useColorModeValue, Text } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { getStrapiMedia, fetchAPI } from "../../../libs";
+import { getStrapiMedia, fetchAPI, dynamicSort } from "../../../libs";
 import { useRouter } from "next/router";
 import { useFetch } from "../../../hooks";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
@@ -130,8 +130,11 @@ export async function getStaticProps({ params }) {
   const articles = await fetchAPI(
     `/articles?slug=${params.slug}&status=published`
   );
-  const categories = await fetchAPI("/categories");
+  const initialCategories = await fetchAPI("/categories");
   const homepage = await fetchAPI("/homepage");
+
+  // Ordering categories
+  const categories = initialCategories.sort(dynamicSort("position"));
 
   return {
     props: { article: articles[0], categories, homepage },
