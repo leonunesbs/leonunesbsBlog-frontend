@@ -5,7 +5,7 @@ const themeBlue: ThemeOverride = {
   colors: {
     brand: {
       300: "#14a5de",
-      500: "#153e75",
+      500: "#155A84",
     },
     gray: {
       50: "#F7FAFC",

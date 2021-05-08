@@ -2,7 +2,6 @@ import React from "react";
 import {
   Icon,
   Link,
-  Text,
   Tooltip,
   useColorModeValue,
   Wrap,

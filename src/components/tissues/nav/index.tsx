@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import {
   Flex,
   useColorModeValue,
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
-import { dynamicSort } from "../../../../libs";
 import { NavProps } from "./Nav";
 import RightNav from "./RightNav";
 import LeftNav from "./LeftNav";
